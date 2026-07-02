@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "La Ode Muh. Ikhsan Mbala",
-  initials: "IM",
+  initials: "OD",
   role: "Fullstack Developer | Software engineer enthusiast",
   description:
     "Frontend developer yang passionate membangun web modern dengan pengalaman user yang optimal.",
