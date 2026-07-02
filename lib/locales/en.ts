@@ -19,6 +19,9 @@ export const en = {
     p1: "Hi! I'm a Fullstack Developer & Software Engineer Enthusiast based in Indonesia.",
     p2: "I'm passionate about building modern web applications with a focus on performance, accessibility, and optimal user experience.",
     p3: "I'm constantly learning and exploring the latest technologies in the web development ecosystem.",
+    statsYears: "Years Experience",
+    statsProjects: "Projects Done",
+    statsTech: "Technologies Mastered",
   },
   projects: {
     title: "Projects",

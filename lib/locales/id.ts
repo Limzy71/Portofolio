@@ -19,6 +19,9 @@ export const id = {
     p1: "Halo! Saya seorang Fullstack Developer & Software Engineer Enthusiast yang berbasis di Indonesia.",
     p2: "Saya passionate dalam membangun aplikasi web modern dengan fokus pada performa, aksesibilitas, dan user experience yang optimal.",
     p3: "Saat ini saya terus belajar dan mengeksplorasi teknologi terbaru di ekosistem web development.",
+    statsYears: "Tahun Pengalaman",
+    statsProjects: "Proyek Selesai",
+    statsTech: "Teknologi Dikuasai",
   },
   projects: {
     title: "Proyek",
