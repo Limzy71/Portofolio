@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const { t, locale, toggleLocale } = useLanguage();
+  const { t, locale, setLocale } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -54,25 +54,53 @@ export function Navbar() {
                 </a>
               </li>
             ))}
-            <li>
+            <li className="flex gap-0.5 overflow-hidden rounded-md border border-gray-300 dark:border-gray-600">
               <button
-                onClick={toggleLocale}
-                className="flex h-8 w-10 items-center justify-center rounded-md border border-gray-300 text-xs font-semibold uppercase transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
-                aria-label="Toggle language"
+                onClick={() => setLocale("id")}
+                className={`px-2.5 py-1 text-xs font-semibold uppercase transition-colors ${
+                  locale === "id"
+                    ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                    : "text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                }`}
               >
-                {locale === "id" ? "EN" : "ID"}
+                ID
+              </button>
+              <button
+                onClick={() => setLocale("en")}
+                className={`px-2.5 py-1 text-xs font-semibold uppercase transition-colors ${
+                  locale === "en"
+                    ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                    : "text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                }`}
+              >
+                EN
               </button>
             </li>
           </ul>
 
           <div className="flex items-center gap-2 md:hidden">
-            <button
-              onClick={toggleLocale}
-              className="flex h-8 w-10 items-center justify-center rounded-md border border-gray-300 text-xs font-semibold uppercase transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
-              aria-label="Toggle language"
-            >
-              {locale === "id" ? "EN" : "ID"}
-            </button>
+            <div className="flex gap-0.5 overflow-hidden rounded-md border border-gray-300 dark:border-gray-600">
+              <button
+                onClick={() => setLocale("id")}
+                className={`px-2.5 py-1 text-xs font-semibold uppercase transition-colors ${
+                  locale === "id"
+                    ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                    : "text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                }`}
+              >
+                ID
+              </button>
+              <button
+                onClick={() => setLocale("en")}
+                className={`px-2.5 py-1 text-xs font-semibold uppercase transition-colors ${
+                  locale === "en"
+                    ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                    : "text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                }`}
+              >
+                EN
+              </button>
+            </div>
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className="flex h-10 w-10 items-center justify-center rounded-lg"

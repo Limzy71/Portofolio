@@ -39,7 +39,7 @@ export function About() {
         >
           <div className="relative h-72 w-72 overflow-hidden rounded-2xl ring-2 ring-gray-200/50 dark:ring-gray-800/50 sm:h-80 sm:w-80">
             <Image
-              src="/images/profile.png"
+              src="/images/profile.jpg"
               alt="Profile photo"
               fill
               className="object-cover"
