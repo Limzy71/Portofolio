@@ -7,8 +7,8 @@ export const siteConfig = {
   email: "email@example.com",
   location: "Indonesia",
   social: {
-    github: "https://github.com/username",
-    linkedin: "https://linkedin.com/in/username",
+    github: "https://github.com/Limzy71",
+    linkedin: "https://www.linkedin.com/in/la-ode-muh-ikhsan-mbala-508628298/",
     instagram: "https://instagram.com/username",
   },
   navLinks: [
