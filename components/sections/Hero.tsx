@@ -106,10 +106,16 @@ export function Hero() {
         </motion.div>
       </Container>
 
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      <motion.button
+        onClick={() =>
+          document
+            .getElementById("about")
+            ?.scrollIntoView({ behavior: "smooth" })
+        }
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        aria-label="Scroll to about"
       >
         <svg
           className="h-6 w-6 text-gray-400"
@@ -124,7 +130,7 @@ export function Hero() {
             d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
           />
         </svg>
-      </motion.div>
+      </motion.button>
     </section>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SplashScreen } from "@/components/layout/SplashScreen";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { BackToTop } from "@/components/layout/BackToTop";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <ScrollToTop />
         <ScrollProgress />
+        <BackToTop />
         <LanguageProvider>
           <SplashScreen />
         <Navbar />
