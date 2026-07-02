@@ -26,7 +26,7 @@ export function SplashScreen() {
               animate="visible"
               className="overflow-hidden"
             >
-              <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
                 {siteConfig.name.split(" ").map((word, wordIdx) => (
                   <span key={wordIdx} className="inline-block mr-4 last:mr-0">
                     {word.split("").map((letter, letterIdx) => (

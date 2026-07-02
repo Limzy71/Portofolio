@@ -28,7 +28,7 @@ export function Hero() {
 
           <motion.h1
             variants={fadeInUp}
-            className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+            className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
           >
             {siteConfig.name}
           </motion.h1>
