@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-const SPLASH_DURATION = 3000;
+const SPLASH_DURATION = 4200;
 const STORAGE_KEY = "splash-seen";
 
 export function useSplashScreen() {

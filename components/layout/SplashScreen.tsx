@@ -12,10 +12,12 @@ export function SplashScreen() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white dark:bg-gray-950"
+          style={{ backgroundColor: "#ffffff" }}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center dark:bg-gray-950"
         >
           <div className="text-center">
             <motion.div
@@ -46,33 +48,23 @@ export function SplashScreen() {
               animate={{
                 opacity: 1,
                 y: 0,
-                transition: { delay: 0.8, duration: 0.6 },
+                transition: { delay: 2, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
               }}
               className="mt-4 text-lg text-gray-500 dark:text-gray-400 sm:text-xl"
             >
               {siteConfig.role}
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: { delay: 1.5, duration: 0.5 },
-              }}
-              className="mt-12"
-            >
-              <div className="mx-auto h-1 w-12 animate-pulse rounded-full bg-gray-300 dark:bg-gray-700" />
-            </motion.div>
           </div>
 
           <motion.button
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { delay: 1.8, duration: 0.5 },
+              transition: { delay: 2.5, duration: 0.5 },
             }}
+            whileHover={{ opacity: 0.6 }}
             onClick={skipSplash}
-            className="absolute bottom-12 text-sm text-gray-400 underline-offset-2 hover:underline dark:text-gray-500"
+            className="absolute bottom-12 text-sm text-gray-400 transition-opacity dark:text-gray-500"
           >
             Skip →
           </motion.button>
