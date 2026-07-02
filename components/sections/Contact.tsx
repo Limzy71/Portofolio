@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Section } from "@/components/ui/Section";
 import { GithubIcon, LinkedinIcon, EmailIcon } from "@/components/ui/Icons";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const socialItems = [
@@ -13,11 +14,13 @@ const socialItems = [
 ] as const;
 
 export function Contact() {
+  const { t } = useLanguage();
+
   return (
     <Section
       id="contact"
-      title="Hubungi Saya"
-      subtitle="Ada proyek atau ingin ngobrol? Langsung aja!"
+      title={t.contact.title}
+      subtitle={t.contact.subtitle}
       className="bg-gray-50 dark:bg-gray-900/50"
     >
       <motion.div
@@ -28,8 +31,7 @@ export function Contact() {
         className="mx-auto max-w-xl space-y-6 text-center"
       >
         <motion.p variants={fadeInUp} className="text-gray-600 dark:text-gray-400">
-          Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk
-          menghubungi saya.
+          {t.contact.description}
         </motion.p>
 
         <motion.div variants={fadeInUp} className="flex items-center justify-center gap-6">

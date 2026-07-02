@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const { t, locale, toggleLocale } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -15,6 +17,14 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const navLinks = [
+    { label: t.nav.home, href: "#home" },
+    { label: t.nav.tentang, href: "#about" },
+    { label: t.nav.proyek, href: "#projects" },
+    { label: t.nav.skill, href: "#skills" },
+    { label: t.nav.kontak, href: "#contact" },
+  ];
 
   return (
     <header
@@ -27,16 +37,13 @@ export function Navbar() {
     >
       <Container>
         <nav className="flex h-16 items-center justify-between">
-          <a
-            href="#home"
-            className="text-lg font-bold tracking-tight"
-          >
+          <a href="#home" className="text-lg font-bold tracking-tight">
             {siteConfig.initials}
             <span className="text-gray-400">.</span>
           </a>
 
           <ul className="hidden items-center gap-8 md:flex">
-            {siteConfig.navLinks.map((link) => (
+            {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -46,34 +53,52 @@ export function Navbar() {
                 </a>
               </li>
             ))}
+            <li>
+              <button
+                onClick={toggleLocale}
+                className="flex h-8 w-10 items-center justify-center rounded-md border border-gray-300 text-xs font-semibold uppercase transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+                aria-label="Toggle language"
+              >
+                {locale === "id" ? "EN" : "ID"}
+              </button>
+            </li>
           </ul>
 
-          <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg md:hidden"
-            aria-label="Toggle menu"
-          >
-            <div className="flex flex-col gap-1.5">
-              <span
-                className={cn(
-                  "block h-0.5 w-5 bg-gray-900 transition-transform dark:bg-white",
-                  isMobileOpen && "translate-y-2 rotate-45",
-                )}
-              />
-              <span
-                className={cn(
-                  "block h-0.5 w-5 bg-gray-900 transition-opacity dark:bg-white",
-                  isMobileOpen && "opacity-0",
-                )}
-              />
-              <span
-                className={cn(
-                  "block h-0.5 w-5 bg-gray-900 transition-transform dark:bg-white",
-                  isMobileOpen && "-translate-y-2 -rotate-45",
-                )}
-              />
-            </div>
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              onClick={toggleLocale}
+              className="flex h-8 w-10 items-center justify-center rounded-md border border-gray-300 text-xs font-semibold uppercase transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+              aria-label="Toggle language"
+            >
+              {locale === "id" ? "EN" : "ID"}
+            </button>
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg"
+              aria-label="Toggle menu"
+            >
+              <div className="flex flex-col gap-1.5">
+                <span
+                  className={cn(
+                    "block h-0.5 w-5 bg-gray-900 transition-transform dark:bg-white",
+                    isMobileOpen && "translate-y-2 rotate-45",
+                  )}
+                />
+                <span
+                  className={cn(
+                    "block h-0.5 w-5 bg-gray-900 transition-opacity dark:bg-white",
+                    isMobileOpen && "opacity-0",
+                  )}
+                />
+                <span
+                  className={cn(
+                    "block h-0.5 w-5 bg-gray-900 transition-transform dark:bg-white",
+                    isMobileOpen && "-translate-y-2 -rotate-45",
+                  )}
+                />
+              </div>
+            </button>
+          </div>
         </nav>
       </Container>
 
@@ -87,7 +112,7 @@ export function Navbar() {
           >
             <Container className="py-4">
               <ul className="flex flex-col gap-4">
-                {siteConfig.navLinks.map((link) => (
+                {navLinks.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}

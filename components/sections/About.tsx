@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
 import { Section } from "@/components/ui/Section";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInLeft, fadeInRight } from "@/lib/animations";
 
 export function About() {
+  const { t } = useLanguage();
+
   return (
-    <Section id="about" title="Tentang Saya" subtitle="Kenalan yuk!">
+    <Section id="about" title={t.about.title} subtitle={t.about.subtitle}>
       <div className="grid items-center gap-12 md:grid-cols-2">
         <motion.div
           variants={fadeInLeft}
@@ -16,18 +18,9 @@ export function About() {
           viewport={{ once: true }}
           className="space-y-4 text-gray-600 dark:text-gray-400"
         >
-          <p>
-            Halo! Saya <strong className="text-gray-900 dark:text-white">{siteConfig.name}</strong>,
-            seorang {siteConfig.role} yang berbasis di {siteConfig.location}.
-          </p>
-          <p>
-            Saya passionate dalam membangun aplikasi web modern dengan fokus pada
-            performa, aksesibilitas, dan user experience yang optimal.
-          </p>
-          <p>
-            Saat ini saya terus belajar dan mengeksplorasi teknologi terbaru di
-            ekosistem web development.
-          </p>
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
+          <p>{t.about.p3}</p>
         </motion.div>
 
         <motion.div

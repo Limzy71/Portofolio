@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SplashScreen } from "@/components/layout/SplashScreen";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
@@ -33,10 +34,12 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <ScrollToTop />
-        <SplashScreen />
+        <LanguageProvider>
+          <SplashScreen />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

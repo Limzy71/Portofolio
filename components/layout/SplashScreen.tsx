@@ -2,11 +2,13 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useSplashScreen } from "@/hooks/useSplashScreen";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { siteConfig } from "@/config/site";
 import { staggerText, letterFadeUp } from "@/lib/animations";
 
 export function SplashScreen() {
   const { isVisible, skipSplash } = useSplashScreen();
+  const { t } = useLanguage();
 
   return (
     <AnimatePresence>
@@ -81,7 +83,7 @@ export function SplashScreen() {
             onClick={skipSplash}
             className="absolute bottom-12 text-sm text-gray-400 transition-opacity dark:text-gray-500"
           >
-            Skip →
+            {t.splash.skip}
           </motion.button>
         </motion.div>
       )}

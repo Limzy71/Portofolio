@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import type { Project } from "@/types/project";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInUp } from "@/lib/animations";
 import { Card } from "@/components/ui/Card";
 
@@ -11,7 +12,9 @@ interface ProjectCardProps {
   index: number;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useLanguage();
+
   return (
     <motion.div variants={fadeInUp}>
       <Card className="group overflow-hidden p-0">
@@ -45,7 +48,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-gray-900 underline-offset-2 hover:underline dark:text-white"
               >
-                Live Demo →
+                {t.projects.liveDemo}
               </a>
             )}
             {project.repoUrl && (
@@ -55,7 +58,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-gray-500 underline-offset-2 hover:underline dark:text-gray-400"
               >
-                Source Code →
+                {t.projects.sourceCode}
               </a>
             )}
           </div>

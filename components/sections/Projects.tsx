@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { ProjectCard } from "@/components/ui/ProjectCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { staggerContainer } from "@/lib/animations";
 import { projects } from "@/data/projects";
 
 export function Projects() {
+  const { t } = useLanguage();
+
   if (projects.length === 0) {
     return (
-      <Section id="projects" title="Proyek" subtitle="Beberapa proyek yang pernah saya kerjakan.">
-        <p className="text-center text-gray-500">Belum ada proyek ditambahkan.</p>
+      <Section id="projects" title={t.projects.title} subtitle={t.projects.subtitle}>
+        <p className="text-center text-gray-500">{t.projects.empty}</p>
       </Section>
     );
   }
@@ -18,8 +21,8 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      title="Proyek"
-      subtitle="Beberapa proyek yang pernah saya kerjakan."
+      title={t.projects.title}
+      subtitle={t.projects.subtitle}
       className="bg-gray-50 dark:bg-gray-900/50"
     >
       <motion.div

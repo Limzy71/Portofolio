@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="home"
@@ -23,7 +26,7 @@ export function Hero() {
             variants={fadeInUp}
             className="text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400"
           >
-            Hello, I&apos;m
+            {t.hero.greeting}
           </motion.p>
 
           <motion.h1
@@ -37,7 +40,7 @@ export function Hero() {
             variants={fadeInUp}
             className="mt-6 text-lg text-gray-600 dark:text-gray-400 sm:text-xl"
           >
-            {siteConfig.description}
+            {t.hero.description}
           </motion.p>
 
           <motion.div
@@ -47,7 +50,7 @@ export function Hero() {
             <Button onClick={() => {
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
             }}>
-              Lihat Proyek
+              {t.hero.viewProjects}
             </Button>
             <Button
               variant="outline"
@@ -55,7 +58,7 @@ export function Hero() {
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Hubungi Saya
+              {t.hero.contactMe}
             </Button>
           </motion.div>
         </motion.div>

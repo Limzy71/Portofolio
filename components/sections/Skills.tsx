@@ -3,19 +3,22 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { SkillBadge } from "@/components/ui/SkillBadge";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { staggerContainer } from "@/lib/animations";
 import { skills } from "@/data/skills";
 
 export function Skills() {
+  const { t } = useLanguage();
+
   const categories = [
-    { key: "frontend" as const, label: "Frontend" },
-    { key: "backend" as const, label: "Backend" },
-    { key: "tools" as const, label: "Tools" },
-    { key: "design" as const, label: "Design" },
+    { key: "frontend" as const, label: t.skills.frontend },
+    { key: "backend" as const, label: t.skills.backend },
+    { key: "tools" as const, label: t.skills.tools },
+    { key: "design" as const, label: t.skills.design },
   ];
 
   return (
-    <Section id="skills" title="Skill" subtitle="Teknologi yang saya kuasai.">
+    <Section id="skills" title={t.skills.title} subtitle={t.skills.subtitle}>
       <div className="space-y-10">
         {categories.map(({ key, label }) => {
           const filtered = skills.filter((s) => s.category === key);
