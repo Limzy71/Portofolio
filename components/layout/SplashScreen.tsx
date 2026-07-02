@@ -16,9 +16,23 @@ export function SplashScreen() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950"
+          style={{ backgroundColor: "#030712" }}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-800/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/60 via-gray-950 to-black" />
+          <motion.div
+            className="absolute inset-0"
+            animate={{
+              background: [
+                "radial-gradient(600px circle at 20% 30%, rgba(99,102,241,0.15), transparent 70%)",
+                "radial-gradient(600px circle at 80% 70%, rgba(99,102,241,0.15), transparent 70%)",
+                "radial-gradient(600px circle at 40% 50%, rgba(99,102,241,0.15), transparent 70%)",
+                "radial-gradient(600px circle at 20% 30%, rgba(99,102,241,0.15), transparent 70%)",
+              ],
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1Ii8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2YpIiBvcGFjaXR5PSIwLjA0Ii8+PC9zdmc+')] opacity-50" />
 
           <div className="relative text-center">
             <motion.div
