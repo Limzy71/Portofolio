@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInLeft, fadeInRight } from "@/lib/animations";
@@ -30,12 +31,15 @@ export function About() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="relative h-72 w-72 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 sm:h-80 sm:w-80">
-            <div className="flex h-full items-center justify-center text-gray-400 dark:text-gray-500">
-              <svg className="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-            </div>
+          <div className="relative h-72 w-72 overflow-hidden rounded-2xl sm:h-80 sm:w-80">
+            <Image
+              src="/images/profile.png"
+              alt="Profile photo"
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 288px, 320px"
+              priority
+            />
           </div>
         </motion.div>
       </div>
