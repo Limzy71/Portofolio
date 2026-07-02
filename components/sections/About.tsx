@@ -23,19 +23,7 @@ export function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-4 text-gray-600 dark:text-gray-400"
-        >
-          <p>{t.about.p1}</p>
-          <p>{t.about.p2}</p>
-          <p>{t.about.p3}</p>
-        </motion.div>
-
-        <motion.div
-          variants={fadeInRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex flex-col items-center gap-8"
+          className="flex flex-col items-center gap-8 md:items-start"
         >
           <div className="relative h-72 w-72 overflow-hidden rounded-2xl ring-2 ring-gray-200/50 dark:ring-gray-800/50 sm:h-80 sm:w-80">
             <Image
@@ -47,6 +35,18 @@ export function About() {
               priority
             />
           </div>
+        </motion.div>
+
+        <motion.div
+          variants={fadeInRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-4 text-gray-600 dark:text-gray-400"
+        >
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
+          <p>{t.about.p3}</p>
         </motion.div>
       </div>
 
