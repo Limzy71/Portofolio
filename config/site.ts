@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Nama Kamu",
-  initials: "NK",
+  name: "La Ode Muh. Ikhsan Mbala",
+  initials: "IM",
   role: "Frontend Developer",
   description:
     "Frontend developer yang passionate membangun web modern dengan pengalaman user yang optimal.",
