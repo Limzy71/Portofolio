@@ -3,7 +3,7 @@ export const siteConfig = {
   initials: "OD",
   role: "Fullstack Developer | Software engineer enthusiast",
   description:
-    "Frontend developer yang passionate membangun web modern dengan pengalaman user yang optimal.",
+    "Fullstack developer & software engineer enthusiast yang passionate membangun solusi digital yang berdampak.",
   location: "Indonesia",
   social: {
     github: "https://github.com/Limzy71",
