@@ -34,32 +34,3 @@ src/
 ├── data/               # Data proyek & skill
 └── config/             # Konfigurasi site (nama, sosial media, dll)
 ```
-
-## Cara Pakai
-
-```bash
-# Install dependencies
-npm install
-
-# Development
-npm run dev
-
-# Build
-npm run build
-
-# Lint
-npm run lint
-```
-
-## Kustomisasi
-
-1. **`config/site.ts`** — Ganti nama, role, deskripsi, sosial media
-2. **`data/projects.ts`** — Tambah/ubah data proyek
-3. **`data/skills.ts`** — Daftar skill
-4. **`public/images/`** — Foto profil & screenshot proyek
-
-## Deploy
-
-Deploy ke Vercel dalam 1 klik:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
