@@ -3,8 +3,14 @@
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import { GithubIcon, LinkedinIcon, EmailIcon } from "@/components/ui/Icons";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+
+const socialItems = [
+  { key: "github", href: siteConfig.social.github, label: "GitHub", Icon: GithubIcon },
+  { key: "linkedin", href: siteConfig.social.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
+  { key: "email", href: siteConfig.social.email, label: "Email", Icon: EmailIcon },
+] as const;
 
 export function Contact() {
   return (
@@ -26,32 +32,19 @@ export function Contact() {
           menghubungi saya.
         </motion.p>
 
-        <motion.div variants={fadeInUp}>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="text-lg font-medium text-gray-900 underline-offset-4 hover:underline dark:text-white"
-          >
-            {siteConfig.email}
-          </a>
-        </motion.div>
-
-        <motion.div variants={fadeInUp} className="flex justify-center gap-4 pt-4">
-          {siteConfig.social.github && (
-            <Button
-              variant="outline"
-              onClick={() => window.open(siteConfig.social.github, "_blank")}
+        <motion.div variants={fadeInUp} className="flex items-center justify-center gap-6">
+          {socialItems.map(({ key, href, label, Icon }) => (
+            <a
+              key={key}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-300 text-gray-600 transition-colors hover:border-gray-900 hover:text-gray-900 dark:border-gray-600 dark:text-gray-400 dark:hover:border-white dark:hover:text-white"
             >
-              GitHub
-            </Button>
-          )}
-          {siteConfig.social.linkedin && (
-            <Button
-              variant="outline"
-              onClick={() => window.open(siteConfig.social.linkedin, "_blank")}
-            >
-              LinkedIn
-            </Button>
-          )}
+              <Icon className="h-5 w-5" />
+            </a>
+          ))}
         </motion.div>
       </motion.div>
     </Section>

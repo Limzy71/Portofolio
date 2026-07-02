@@ -4,12 +4,11 @@ export const siteConfig = {
   role: "Frontend Developer",
   description:
     "Frontend developer yang passionate membangun web modern dengan pengalaman user yang optimal.",
-  email: "laodemuhikhsan18@gmail.com",
   location: "Indonesia",
   social: {
     github: "https://github.com/Limzy71",
     linkedin: "https://www.linkedin.com/in/la-ode-muh-ikhsan-mbala-508628298/",
-    instagram: "https://instagram.com/username",
+    email: "mailto:laodemuhikhsan18@gmail.com",
   },
   navLinks: [
     { label: "Home", href: "#home" },
