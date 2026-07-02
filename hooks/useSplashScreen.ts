@@ -3,21 +3,13 @@
 import { useState, useEffect, useCallback } from "react";
 
 const SPLASH_DURATION = 4200;
-const STORAGE_KEY = "splash-seen";
 
 export function useSplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const hasSeen = sessionStorage.getItem(STORAGE_KEY);
-    if (hasSeen) {
-      setIsVisible(false);
-      return;
-    }
-
     const timer = setTimeout(() => {
       setIsVisible(false);
-      sessionStorage.setItem(STORAGE_KEY, "true");
     }, SPLASH_DURATION);
 
     return () => clearTimeout(timer);
@@ -25,7 +17,6 @@ export function useSplashScreen() {
 
   const skipSplash = useCallback(() => {
     setIsVisible(false);
-    sessionStorage.setItem(STORAGE_KEY, "true");
   }, []);
 
   return { isVisible, skipSplash };
