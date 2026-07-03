@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import type { Project } from "@/types/project";
@@ -14,6 +15,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const { locale } = useLanguage();
+  const [isActive, setIsActive] = useState(false);
   const description =
     locale === "en" && project.descriptionEn
       ? project.descriptionEn
@@ -22,7 +24,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative [[-webkit-tap-highlight-color:transparent]]"
+      onClick={() => setIsActive(!isActive)}
+      className="group relative [[-webkit-tap-highlight-color:transparent]] cursor-pointer"
     >
       <Card className="overflow-hidden p-0 border-zinc-200 dark:border-zinc-800">
         <div className="relative aspect-[4/5] overflow-hidden bg-zinc-100 dark:bg-zinc-900">
@@ -35,14 +38,28 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
 
           {project.status && (
-            <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/90 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
+            <div
+              className={`absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/90 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase transition-opacity duration-75 md:duration-300 ease-out ${
+                isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              }`}
+            >
               {project.status}
             </div>
           )}
           
-          {/* Details Overlay (shows on hover/tap) */}
-          <div className="absolute inset-0 z-10 flex flex-col justify-end bg-neutral-950/90 p-6 text-white opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
-            <div className="flex flex-col gap-3 translate-y-2 transition-transform duration-300 ease-out group-hover:translate-y-0">
+          {/* Details Overlay (instant full snap on tap/hover) */}
+          <div
+            className={`absolute inset-0 z-10 flex flex-col justify-end bg-neutral-950/90 p-6 text-white transition-opacity duration-75 md:duration-300 ease-out ${
+              isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            }`}
+          >
+            <div
+              className={`flex flex-col gap-3 transition-transform duration-75 md:duration-300 ease-out ${
+                isActive
+                  ? "translate-y-0"
+                  : "translate-y-0 md:translate-y-2 group-hover:translate-y-0"
+              }`}
+            >
               <h3 className="text-xl font-bold uppercase tracking-tight text-white leading-tight">
                 {project.title}
               </h3>
@@ -68,6 +85,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-1.5 rounded border border-zinc-700 px-3 py-1.5 text-xs font-semibold text-white transition-all hover:bg-white hover:text-black hover:border-white"
                   >
                     <FiArrowUpRight className="h-3.5 w-3.5" />
@@ -81,6 +99,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-1.5 rounded border border-zinc-700 px-3 py-1.5 text-xs font-semibold text-white transition-all hover:bg-white hover:text-black hover:border-white"
                   >
                     <FiGithub className="h-3.5 w-3.5" />
