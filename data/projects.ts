@@ -5,12 +5,12 @@ export const projects: Project[] = [
     id: "project-1",
     title: "Spendly Financial App",
     description:
-      "Aplikasi manajemen keuangan digital modern dengan analitik pengeluaran interaktif, pelacakan anggaran real-time, dan antarmuka pengguna yang intuitif.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
+      "Aplikasi pengelolaan keuangan berbasis Flutter untuk mencatat transaksi, memantau keuangan, mengatur pengingat, dan menyimpan data secara lokal maupun terhubung ke backend Supabase dengan fitur autentikasi biometrik serta ekspor laporan PDF/CSV.",
+    techStack: ["Flutter", "Dart", "Supabase", "BLoC", "FL Chart"],
     image: "/images/projects/Logo Spendly.jpeg",
     liveUrl: "https://github.com/Limzy71",
     repoUrl: "https://github.com/Limzy71",
-    status: "● Live Demo",
+    status: "● Mobile App",
   },
   {
     id: "project-2",
