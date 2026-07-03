@@ -58,18 +58,15 @@ export function Navbar() {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, "#home")}
-            className="group flex items-center gap-0.5 text-2xl font-black tracking-tighter transition-transform hover:scale-105"
+            className="group flex items-center text-3xl font-black tracking-tighter transition-transform hover:scale-105"
           >
             <span
-              className="bg-cover bg-center bg-no-repeat bg-clip-text text-transparent filter drop-shadow-[0_2px_10px_rgba(139,92,246,0.35)]"
+              className="bg-[size:180%_auto] bg-center bg-no-repeat bg-clip-text text-transparent brightness-150 contrast-125 saturate-150 drop-shadow-[0_0_15px_rgba(234,179,8,0.45)]"
               style={{
                 backgroundImage: `url('/images/kain%20tenun%20bg.png')`,
               }}
             >
-              {siteConfig.initials}
-            </span>
-            <span className="text-violet-500 transition-colors group-hover:text-violet-400">
-              .
+              {siteConfig.initials.replace(/\./g, "")}
             </span>
           </a>
 
