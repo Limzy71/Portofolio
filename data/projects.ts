@@ -8,8 +8,10 @@ export const projects: Project[] = [
       "Aplikasi pengelolaan keuangan berbasis Flutter untuk mencatat transaksi, memantau keuangan, mengatur pengingat, dan menyimpan data secara lokal.",
     techStack: ["Flutter", "Supabase"],
     image: "/images/projects/Logo Spendly.jpeg",
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.penacode.spendly&hl=id",
     repoUrl: "https://github.com/Limzy71/Spendly_SAB_Tubes_2026",
-    status: "● Mobile App",
+    status: "Mobile App",
   },
   {
     id: "project-2",
@@ -18,9 +20,8 @@ export const projects: Project[] = [
       "Platform panduan petualangan alam terbuka dan pemesanan aktivitas wisata outdoor dengan penjelajahan destinasi berbasis peta interaktif.",
     techStack: ["React", "Node.js", "Express", "MongoDB"],
     image: "/images/projects/outventure.jpg",
-    liveUrl: "https://github.com/Limzy71",
     repoUrl: "https://github.com/Naksuuuu/OutVenture",
-    status: "● Live Demo",
+    status: "Code Only",
   },
   {
     id: "project-3",

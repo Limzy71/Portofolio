@@ -64,7 +64,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     className="inline-flex items-center gap-1.5 rounded border border-zinc-700 px-3 py-1.5 text-xs font-semibold text-white transition-all hover:bg-white hover:text-black hover:border-white"
                   >
                     <FiArrowUpRight className="h-3.5 w-3.5" />
-                    LIVE
+                    {project.liveUrl.includes("play.google.com")
+                      ? "PLAY STORE"
+                      : "LIVE"}
                   </a>
                 )}
                 {project.repoUrl && (
