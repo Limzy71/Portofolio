@@ -3,7 +3,7 @@
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { SocialLink } from "@/components/ui/SocialLink";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon, EmailIcon } from "@/components/ui/Icons";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
@@ -22,6 +22,12 @@ export function Footer() {
           </SocialLink>
           <SocialLink href={siteConfig.social.linkedin} label="LinkedIn">
             <LinkedinIcon className="h-5 w-5" />
+          </SocialLink>
+          <SocialLink href={siteConfig.social.instagram} label="Instagram">
+            <InstagramIcon className="h-5 w-5" />
+          </SocialLink>
+          <SocialLink href={siteConfig.social.email} label="Email">
+            <EmailIcon className="h-5 w-5" />
           </SocialLink>
         </div>
       </Container>

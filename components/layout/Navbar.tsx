@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -10,6 +10,15 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const { t, locale, setLocale } = useLanguage();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { label: t.nav.home, href: "#home" },
@@ -24,7 +33,9 @@ export function Navbar() {
       suppressHydrationWarning
       className={cn(
         "fixed top-0 right-0 left-0 z-40 transition-all duration-300",
-        "bg-white/80 backdrop-blur-xl dark:bg-gray-950/80",
+        isScrolled
+          ? "border-b border-white/10 bg-black/60 shadow-lg backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
       )}
     >
       <Container>
