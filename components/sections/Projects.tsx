@@ -23,7 +23,7 @@ export function Projects() {
       id="projects"
       title={t.projects.title}
       subtitle={t.projects.subtitle}
-      className="bg-gray-50 dark:bg-gray-900/50"
+      className="bg-gradient-to-b from-gray-50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-950/30"
     >
       <motion.div
         variants={staggerContainer}

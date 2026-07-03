@@ -1,4 +1,4 @@
-export const en = {
+﻿export const en = {
   nav: {
     home: "Home",
     tentang: "About",
@@ -27,30 +27,66 @@ export const en = {
     title: "Projects",
     subtitle: "Some projects I've worked on.",
     empty: "No projects added yet.",
-    liveDemo: "Live Demo →",
-    sourceCode: "Source Code →",
+    liveDemo: "Live Demo â†’",
+    sourceCode: "Source Code â†’",
   },
   skills: {
     title: "Skills",
     subtitle: "Technologies I work with.",
-    frontend: "Frontend",
-    backend: "Backend",
-    tools: "Tools",
-    design: "Design",
+    kicker: "let's build something together",
+    headingPrefix: "Skills &",
+    headingHighlight: "Expertise",
+    cards: {
+      softwareMobile: "SOFTWARE & MOBILE",
+      languages: "LANGUAGES & CORE TECH",
+      uiux: "UI/UX",
+      tools: "DATABASES & DEV TOOLS",
+      softSkills: "SOFT SKILLS",
+    },
   },
   contact: {
     title: "Contact Me",
-    subtitle: "Got a project or want to chat? Just reach out!",
+    subtitle: "Choose your favorite channel to connect.",
+    kicker: "let's build something together",
+    headingPrefix: "Let's",
+    headingHighlight: "Connect",
     description:
-      "Have a question or want to collaborate? Don't hesitate to contact me.",
+      "Have a project idea, collaboration opportunity, or just want to connect? Pick any channel below.",
+    form: {
+      nameLabel: "Your Name",
+      namePlaceholder: "Enter your name",
+      emailLabel: "Your Email",
+      emailPlaceholder: "Enter your email",
+      messageLabel: "Message",
+      messagePlaceholder: "Tell me briefly about your project or what you need..",
+      submit: "Send Message",
+      sending: "Sending...",
+      success: "Message sent successfully!",
+      error: "Failed to send message. Please try again.",
+    },
+    heading: "Start a Conversation",
+    body: "Have a project idea, collaboration opportunity, or just want to connect? Pick any channel below and let's start a conversation.",
+    location: "Location",
+    locationValue: "Bandung, West Java, Indonesia",
+    sendEmail: "Send Email Directly",
+    links: {
+      github: "Github",
+      linkedin: "LinkedIn",
+      instagram: "Instagram",
+      email: "Email",
+    },
   },
   footer: {
     rights: "All rights reserved.",
     builtWith: "Built with Next.js & Framer Motion",
   },
   splash: {
-    skip: "Skip →",
+    skip: "Skip â†’",
   },
 } as const;
 
 export type EnTranslation = typeof en;
+
+
+
+

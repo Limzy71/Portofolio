@@ -1,4 +1,4 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: "La Ode Muh. Ikhsan Mbala",
   initials: "OD",
   role: "Fullstack Developer | Software engineer enthusiast",
@@ -6,8 +6,10 @@ export const siteConfig = {
   social: {
     github: "https://github.com/Limzy71",
     linkedin: "https://www.linkedin.com/in/la-ode-muh-ikhsan-mbala-508628298/",
+    instagram: "https://www.instagram.com/ikhsanlaode_/",
     email: "mailto:laodemuhikhsan18@gmail.com",
   },
-} as const;
 
-export type SiteConfig = typeof siteConfig;
+};
+
+

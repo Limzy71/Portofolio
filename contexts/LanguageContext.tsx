@@ -3,9 +3,8 @@
 import {
   createContext,
   useContext,
-  useState,
-  useEffect,
   useCallback,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import type { Locale, Translation } from "@/lib/locales";
@@ -29,34 +28,42 @@ function detectBrowserLocale(): Locale {
   return "en";
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("id");
+function getStoredLocale(): Locale {
+  if (typeof window === "undefined") return "id";
 
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (saved === "id" || saved === "en") {
-      setLocaleState(saved);
-    } else {
-      const detected = detectBrowserLocale();
-      setLocaleState(detected);
-      localStorage.setItem(STORAGE_KEY, detected);
-    }
-  }, []);
+  const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
+  if (saved === "id" || saved === "en") return saved;
+
+  return detectBrowserLocale();
+}
+
+function subscribeLocale(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener("portfolio-locale-change", onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener("portfolio-locale-change", onStoreChange);
+  };
+}
+
+function emitLocaleChange() {
+  window.dispatchEvent(new Event("portfolio-locale-change"));
+}
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const locale = useSyncExternalStore<Locale>(subscribeLocale, getStoredLocale, () => "id");
 
   const setLocale = useCallback((newLocale: Locale) => {
-    setLocaleState(newLocale);
     localStorage.setItem(STORAGE_KEY, newLocale);
+    emitLocaleChange();
   }, []);
 
   const toggleLocale = useCallback(() => {
-    setLocaleState((prev) => {
-      const next = prev === "id" ? "en" : "id";
-      localStorage.setItem(STORAGE_KEY, next);
-      return next;
-    });
-  }, []);
+    setLocale(locale === "id" ? "en" : "id");
+  }, [locale, setLocale]);
 
-  const t = locales[locale] as Translation;
+  const t: Translation = locales[locale];
 
   return (
     <LanguageContext.Provider value={{ locale, t, toggleLocale, setLocale }}>
@@ -70,3 +77,4 @@ export function useLanguage() {
   if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
   return ctx;
 }
+

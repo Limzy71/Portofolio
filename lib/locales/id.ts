@@ -1,4 +1,4 @@
-export const id = {
+﻿export const id = {
   nav: {
     home: "Home",
     tentang: "Tentang",
@@ -27,30 +27,66 @@ export const id = {
     title: "Proyek",
     subtitle: "Beberapa proyek yang pernah saya kerjakan.",
     empty: "Belum ada proyek ditambahkan.",
-    liveDemo: "Live Demo →",
-    sourceCode: "Source Code →",
+    liveDemo: "Live Demo â†’",
+    sourceCode: "Source Code â†’",
   },
   skills: {
     title: "Skill",
     subtitle: "Teknologi yang saya kuasai.",
-    frontend: "Frontend",
-    backend: "Backend",
-    tools: "Tools",
-    design: "Design",
+    kicker: "mari bangun sesuatu bersama",
+    headingPrefix: "Skill &",
+    headingHighlight: "Keahlian",
+    cards: {
+      softwareMobile: "PERANGKAT LUNAK & MOBILE",
+      languages: "BAHASA & TEKNOLOGI INTI",
+      uiux: "UI/UX",
+      tools: "DATABASE & ALAT DEV",
+      softSkills: "KEMAMPUAN NON-TEKNIS",
+    },
   },
   contact: {
     title: "Hubungi Saya",
-    subtitle: "Ada proyek atau ingin ngobrol? Langsung aja!",
+    subtitle: "Pilih kanal favorit Anda untuk terhubung.",
+    kicker: "mari bangun sesuatu bersama",
+    headingPrefix: "Mari",
+    headingHighlight: "Terhubung",
     description:
-      "Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya.",
+      "Punya ide proyek, peluang kolaborasi, atau sekadar ingin terhubung? Pilih salah satu kanal di bawah.",
+    form: {
+      nameLabel: "Nama Anda",
+      namePlaceholder: "Masukkan nama Anda",
+      emailLabel: "Email Anda",
+      emailPlaceholder: "Masukkan email Anda",
+      messageLabel: "Pesan",
+      messagePlaceholder: "Ceritakan singkat tentang proyek atau layanan yang Anda butuhkan..",
+      submit: "Kirim Pesan",
+      sending: "Mengirim...",
+      success: "Pesan berhasil dikirim!",
+      error: "Gagal mengirim pesan. Silakan coba lagi.",
+    },
+    heading: "Mulai Percakapan",
+    body: "Punya ide proyek, peluang kolaborasi, atau sekadar ingin terhubung? Pilih salah satu kanal di bawah dan mari mulai percakapan.",
+    location: "Lokasi",
+    locationValue: "Bandung, Jawa Barat, Indonesia",
+    sendEmail: "Kirim Email Langsung",
+    links: {
+      github: "Github",
+      linkedin: "LinkedIn",
+      instagram: "Instagram",
+      email: "Email",
+    },
   },
   footer: {
     rights: "All rights reserved.",
     builtWith: "Dibuat dengan Next.js & Framer Motion",
   },
   splash: {
-    skip: "Skip →",
+    skip: "Skip â†’",
   },
 } as const;
 
 export type IdTranslation = typeof id;
+
+
+
+

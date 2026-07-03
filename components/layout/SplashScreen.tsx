@@ -16,7 +16,7 @@ export function SplashScreen() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950"
           style={{ backgroundColor: "#030712" }}
         >
@@ -64,7 +64,7 @@ export function SplashScreen() {
               animate={{
                 opacity: 1,
                 y: 0,
-                transition: { delay: 2, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                transition: { delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
               }}
               className="mt-4 text-lg text-gray-400 sm:text-xl"
             >
@@ -76,7 +76,7 @@ export function SplashScreen() {
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { delay: 2.5, duration: 0.5 },
+              transition: { delay: 1.2, duration: 0.4 },
             }}
             whileHover={{ opacity: 0.6 }}
             onClick={skipSplash}

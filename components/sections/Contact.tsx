@@ -1,59 +1,101 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
-import { Section } from "@/components/ui/Section";
-import { GithubIcon, LinkedinIcon, EmailIcon } from "@/components/ui/Icons";
+import { Container } from "@/components/ui/Container";
+import { EmailIcon, GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import type { Translation } from "@/lib/locales";
+import type { ComponentType } from "react";
 
-const socialItems = [
-  { key: "github", href: siteConfig.social.github, label: "GitHub", Icon: GithubIcon },
-  { key: "linkedin", href: siteConfig.social.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
-  { key: "email", href: siteConfig.social.email, label: "Email", Icon: EmailIcon },
-] as const;
+const contactLinks = [
+  {
+    labelKey: "github",
+    href: siteConfig.social.github,
+    icon: GithubIcon,
+  },
+  {
+    labelKey: "linkedin",
+    href: siteConfig.social.linkedin,
+    icon: LinkedinIcon,
+  },
+  {
+    labelKey: "instagram",
+    href: siteConfig.social.instagram,
+    icon: InstagramIcon,
+  },
+  {
+    labelKey: "email",
+    href: siteConfig.social.email,
+    icon: EmailIcon,
+  },
+] as const satisfies ReadonlyArray<{
+  labelKey: keyof Translation["contact"]["links"];
+  href: string;
+  icon: ComponentType<{ className?: string }>;
+}>;
 
 export function Contact() {
   const { t } = useLanguage();
 
   return (
-    <Section
+    <section
       id="contact"
-      title={t.contact.title}
-      subtitle={t.contact.subtitle}
-      className="bg-gray-50 dark:bg-gray-900/50"
+      className="relative overflow-hidden bg-gray-950 py-20 md:py-28"
     >
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="mx-auto max-w-xl"
-      >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, white 1px, transparent 0)`,
+          backgroundSize: "50px 50px",
+        }}
+      />
+
+      <Container>
         <motion.div
-          variants={fadeInUp}
-          className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm dark:border-gray-800 dark:bg-gray-950 sm:p-12"
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto flex max-w-5xl flex-col items-center text-center"
         >
-          <p className="text-gray-600 dark:text-gray-400">
-            {t.contact.description}
+          <p className="text-xs font-black uppercase tracking-[0.35em] text-violet-500 dark:text-violet-400">
+            {t.contact.kicker}
           </p>
 
-          <div className="mt-8 flex items-center justify-center gap-6">
-            {socialItems.map(({ key, href, label, Icon }) => (
-              <a
-                key={key}
+          <h2 className="mt-6 text-5xl font-black uppercase leading-[0.95] tracking-tighter text-white sm:text-6xl md:text-7xl">
+            {t.contact.headingPrefix}
+            <span className="block">{t.contact.headingHighlight}</span>
+          </h2>
+
+          <p className="mt-10 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
+            {t.contact.body}
+          </p>
+
+          <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
+            {contactLinks.map(({ labelKey, href, icon: Icon }) => (
+              <motion.a
+                key={labelKey}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-300 text-gray-600 transition-all hover:-translate-y-1 hover:border-indigo-500 hover:text-indigo-600 hover:shadow-lg hover:shadow-indigo-500/10 dark:border-gray-600 dark:text-gray-400 dark:hover:border-indigo-400 dark:hover:text-indigo-400"
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-violet-400/60 hover:bg-violet-400/10 sm:w-auto"
               >
-                <Icon className="h-5 w-5" />
-              </a>
+                <Icon className="h-5 w-5 text-gray-300 transition-colors group-hover:text-violet-300" />
+                {t.contact.links[labelKey]}
+              </motion.a>
             ))}
           </div>
         </motion.div>
-      </motion.div>
-    </Section>
+      </Container>
+    </section>
   );
 }
+
+
+
+
+
+

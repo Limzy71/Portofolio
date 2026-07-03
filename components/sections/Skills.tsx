@@ -1,60 +1,185 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
-import { Section } from "@/components/ui/Section";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { skills } from "@/data/skills";
 
-const skillLevels: Record<string, number> = {
-  "Next.js": 90,
-  React: 85,
-  TypeScript: 80,
-  "Tailwind CSS": 90,
-  JavaScript: 85,
-  "Node.js": 75,
-  PostgreSQL: 65,
-  Git: 80,
-  Figma: 60,
-};
+import {
+  SiNextdotjs,
+  SiLaravel,
+  SiPhp,
+  SiMysql,
+  SiFlutter,
+  SiTailwindcss,
+  SiSupabase,
+  SiGit,
+  SiFigma,
+  SiCanvas,
+  SiTypescript,
+  SiJavascript,
+} from "react-icons/si";
+import { FaCode } from "react-icons/fa";
+import {
+  FiUsers,
+  FiMessageSquare,
+  FiInfo,
+  FiRefreshCw,
+  FiLayout,
+} from "react-icons/fi";
+import { HiOutlineSparkles } from "react-icons/hi2";
+import { Container } from "@/components/ui/Container";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
+import type { Locale, Translation } from "@/lib/locales";
+import type { ComponentType } from "react";
+
+interface SkillTag {
+  name: string;
+  icon?: ComponentType<{ className?: string }>;
+}
+
+interface SkillCard {
+  titleKey: keyof Translation["skills"]["cards"];
+  icon: ComponentType<{ className?: string }>;
+  tags: SkillTag[];
+}
+
+function getSkillCards(locale: Locale): SkillCard[] {
+  return [
+    {
+      titleKey: "softwareMobile",
+      icon: FaCode,
+      tags: [
+        { name: "Next.js", icon: SiNextdotjs },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "Laravel", icon: SiLaravel },
+        { name: "PHP", icon: SiPhp },
+        { name: "Flutter", icon: SiFlutter },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
+      ],
+    },
+    {
+      titleKey: "tools",
+      icon: SiGit,
+      tags: [
+        { name: "MySQL", icon: SiMysql },
+        { name: "Supabase", icon: SiSupabase },
+        { name: "Git", icon: SiGit },
+      ],
+    },
+    {
+      titleKey: "uiux",
+      icon: FiLayout,
+      tags: [
+        { name: "Figma", icon: SiFigma },
+        { name: "Canva" },
+        { name: "Stitch AI", icon: HiOutlineSparkles },
+      ],
+    },
+    {
+      titleKey: "softSkills",
+      icon: FiUsers,
+      tags: [
+        { name: locale === "id" ? "Kerja Sama Tim" : "Teamwork", icon: FiUsers },
+        { name: locale === "id" ? "Komunikasi" : "Communication", icon: FiMessageSquare },
+        { name: locale === "id" ? "Pemecahan Masalah" : "Problem Solving", icon: FiInfo },
+        { name: locale === "id" ? "Adaptabilitas" : "Adaptability", icon: FiRefreshCw },
+      ],
+    },
+  ];
+}
 
 export function Skills() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
-    <Section id="skills" title={t.skills.title} subtitle={t.skills.subtitle}>
-      <div className="mx-auto max-w-3xl">
+    <section
+      id="skills"
+      className="relative overflow-hidden bg-gradient-to-b from-purple-50/20 via-transparent to-transparent py-20 dark:from-purple-950/10 dark:via-transparent dark:to-transparent md:py-28"
+    >
+      <Container>
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-5xl text-center"
+        >
+          <p className="font-mono text-base font-semibold tracking-wide text-violet-400 sm:text-xl">
+            {t.skills.kicker}
+          </p>
+          <h2 className="mt-8 text-5xl font-black uppercase leading-[0.95] tracking-tighter text-gray-900 dark:text-white sm:text-6xl md:text-7xl">
+            {t.skills.headingPrefix}
+            <span className="block">{t.skills.headingHighlight}</span>
+          </h2>
+          <p className="mx-auto mt-10 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-400 sm:text-lg">
+            {t.skills.subtitle}
+          </p>
+        </motion.div>
+
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-6"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-2 xl:grid-cols-3"
         >
-          {skills.map((skill) => {
-            const level = skillLevels[skill.name] ?? 70;
+          {getSkillCards(locale).map((card) => {
+            const CardIcon = card.icon;
+
             return (
-              <motion.div key={skill.name} variants={fadeInUp}>
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {skill.name}
+              <div
+                key={card.titleKey}
+                className="group rounded-xl border border-gray-200/70 bg-white/70 p-8 shadow-sm shadow-black/5 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/70 dark:shadow-black/20"
+              >
+                <div className="mb-7 flex items-center gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-400/30 bg-indigo-500/10 text-indigo-500 dark:text-indigo-400">
+                    <CardIcon className="h-4.5 w-4.5" />
                   </span>
-                  <span className="text-xs text-gray-400">{level}%</span>
+                  <h3 className="text-sm font-black uppercase tracking-tight text-gray-900 dark:text-white sm:text-base">
+                    {t.skills.cards[card.titleKey]}
+                  </h3>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
-                  <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                  />
+
+                <div className="flex flex-wrap gap-3">
+                  {card.tags.map((tag, tagIndex) => {
+                    const TagIcon = tag.icon;
+
+                    return (
+                      <motion.span
+                        key={tag.name}
+                        className="inline-flex items-center gap-2 rounded-md border border-emerald-500/30 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-600 shadow-[0_0_10px_rgba(16,185,129,0.1)] dark:border-emerald-500/30 dark:bg-gray-800/60 dark:text-gray-300"
+                        initial={{ borderColor: "rgba(16,185,129,0.3)", boxShadow: "0 0 10px rgba(16,185,129,0.1)" }}
+                        animate={{
+                          borderColor: ["rgba(16,185,129,0.3)", "rgba(16,185,129,0.8)", "rgba(16,185,129,0.3)"],
+                          boxShadow: ["0 0 10px rgba(16,185,129,0.1)", "0 0 20px rgba(16,185,129,0.45)", "0 0 10px rgba(16,185,129,0.1)"],
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: (tagIndex % 3) * 1.2,
+                        }}
+                      >
+                        {TagIcon ? <TagIcon className="h-4 w-4 text-emerald-400" /> : null}
+                        {tag.name}
+                      </motion.span>
+                    );
+                  })}
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </motion.div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   );
 }
+
+
+
+
+
+
+
+
+

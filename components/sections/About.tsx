@@ -16,7 +16,7 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <Section id="about" title={t.about.title} subtitle={t.about.subtitle}>
+    <Section id="about" title={t.about.title} subtitle={t.about.subtitle} className="bg-gradient-to-b from-indigo-50/20 via-transparent to-transparent dark:from-indigo-950/10 dark:via-transparent dark:to-transparent">
       <div className="grid items-center gap-12 md:grid-cols-2">
         <motion.div
           variants={fadeInLeft}

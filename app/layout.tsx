@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import { SplashScreen } from "@/components/layout/SplashScreen";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { BackToTop } from "@/components/layout/BackToTop";
@@ -35,16 +36,25 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
+        
+          {`(function(){try{var attrs=['bis_skin_checked','fdprocessedid','_ext','data-gr-ext'];function clean(){attrs.forEach(function(attr){document.querySelectorAll('['+attr+']').forEach(function(el){el.removeAttribute(attr);});});}clean();new MutationObserver(clean).observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:attrs});}catch(e){}})();`}
+        
         <ScrollToTop />
         <ScrollProgress />
         <BackToTop />
         <LanguageProvider>
           <SplashScreen />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
         </LanguageProvider>
       </body>
     </html>
   );
 }
+
+
+
+
+
+
