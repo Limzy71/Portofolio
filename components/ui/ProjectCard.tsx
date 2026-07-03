@@ -13,7 +13,11 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const { t } = useLanguage();
+  const { locale } = useLanguage();
+  const description =
+    locale === "en" && project.descriptionEn
+      ? project.descriptionEn
+      : project.description;
 
   return (
     <motion.div variants={fadeInUp} className="group relative">
@@ -41,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </h3>
               
               <p className="text-xs text-zinc-300 line-clamp-4 leading-relaxed">
-                {project.description}
+                {description}
               </p>
               
               <div className="flex flex-wrap gap-1.5 pt-1">

@@ -6,6 +6,8 @@ export const projects: Project[] = [
     title: "Spendly Financial App",
     description:
       "Aplikasi pengelolaan keuangan berbasis Flutter untuk mencatat transaksi, memantau keuangan, mengatur pengingat, dan menyimpan data secara lokal.",
+    descriptionEn:
+      "Flutter-based financial management application to record transactions, monitor cash flow, manage reminders, and store data locally.",
     techStack: ["Flutter", "Supabase"],
     image: "/images/projects/Logo Spendly.jpeg",
     liveUrl:
@@ -18,6 +20,8 @@ export const projects: Project[] = [
     title: "OutVenture Outdoor Store",
     description:
       "Platform web e-commerce penjualan perlengkapan dan peralatan aktivitas outdoor terpadu dengan pengelolaan katalog produk, keranjang belanja, dan sistem pemesanan.",
+    descriptionEn:
+      "Integrated e-commerce web platform for outdoor gear and adventure equipment with responsive product catalog, shopping cart, and ordering system.",
     techStack: ["PHP", "Laravel", "Blade", "SQLite"],
     image: "/images/projects/outventure.jpg",
     repoUrl: "https://github.com/Naksuuuu/OutVenture",
@@ -28,6 +32,8 @@ export const projects: Project[] = [
     title: "Motekar ERP System",
     description:
       "Sistem ERP terpadu untuk otomasi operasional bisnis dari pengadaan, gudang, produksi, hingga QC dan CRM.",
+    descriptionEn:
+      "Comprehensive enterprise ERP system automating business operations from procurement, warehouse, production, to quality control and CRM.",
     techStack: ["Express", "TypeScript", "Vite", "MySQL"],
     image: "/images/projects/Motekar ERP.jpg",
     liveUrl: "https://motebike.duckdns.org/",
