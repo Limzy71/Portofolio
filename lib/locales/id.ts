@@ -86,7 +86,7 @@ export const id = {
     builtWith: "Dibuat dengan Next.js & Framer Motion",
   },
   splash: {
-    skip: "Skip â†’",
+    skip: "Lewati Intro",
   },
 } as const;
 

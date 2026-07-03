@@ -86,7 +86,7 @@ export const en = {
     builtWith: "Built with Next.js & Framer Motion",
   },
   splash: {
-    skip: "Skip â†’",
+    skip: "Skip Intro",
   },
 } as const;
 
