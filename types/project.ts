@@ -6,4 +6,5 @@ export interface Project {
   image: string;
   liveUrl?: string;
   repoUrl?: string;
+  status?: string;
 }

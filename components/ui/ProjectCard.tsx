@@ -26,6 +26,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
+
+          {project.status && (
+            <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase backdrop-blur-md">
+              {project.status}
+            </div>
+          )}
           
           {/* Details Overlay (visible by default on touch/mobile, hover on desktop) */}
           <div className="absolute inset-0 z-10 flex flex-col justify-end bg-neutral-950/85 p-6 text-white opacity-100 backdrop-blur-[2px] transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
