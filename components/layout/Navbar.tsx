@@ -20,6 +20,21 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    setIsMobileOpen(false);
+    const targetId = href.replace("#", "");
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      setTimeout(() => {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    }
+  };
+
   const navLinks = [
     { label: t.nav.home, href: "#home" },
     { label: t.nav.tentang, href: "#about" },
@@ -40,7 +55,11 @@ export function Navbar() {
     >
       <Container>
         <nav className="flex h-16 items-center justify-between">
-          <a href="#home" className="text-lg font-bold tracking-tight">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            className="text-lg font-bold tracking-tight"
+          >
             {siteConfig.initials}
             <span className="text-gray-400">.</span>
           </a>
@@ -50,6 +69,7 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                 >
                   {link.label}
@@ -147,7 +167,7 @@ export function Navbar() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      onClick={() => setIsMobileOpen(false)}
+                      onClick={(e) => handleNavClick(e, link.href)}
                       className="block py-2 text-sm font-medium"
                     >
                       {link.label}

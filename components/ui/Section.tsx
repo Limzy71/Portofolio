@@ -21,8 +21,8 @@ export function Section({ id, title, subtitle, children, className }: SectionPro
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className={cn("py-20 md:py-28", className)}
+      viewport={{ once: true, amount: 0.1 }}
+      className={cn("scroll-mt-20 py-20 md:py-28", className)}
     >
       <Container>
         {title && (

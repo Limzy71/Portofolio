@@ -27,7 +27,7 @@ export function About() {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         className="mx-auto max-w-3xl space-y-4 text-center text-gray-300 sm:text-lg sm:leading-8"
       >
         <div className="mx-auto mb-8 h-px w-28 bg-gradient-to-r from-transparent via-violet-500/60 to-transparent" />

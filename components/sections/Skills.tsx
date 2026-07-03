@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 
@@ -94,14 +94,14 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-gradient-to-b from-purple-50/20 via-transparent to-transparent py-20 dark:from-purple-950/10 dark:via-transparent dark:to-transparent md:py-28"
+      className="scroll-mt-20 relative overflow-hidden bg-gradient-to-b from-purple-50/20 via-transparent to-transparent py-20 dark:from-purple-950/10 dark:via-transparent dark:to-transparent md:py-28"
     >
       <Container>
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.35 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="mx-auto max-w-5xl text-center"
         >
           <p className="font-mono text-base font-semibold tracking-wide text-violet-400 sm:text-xl">
