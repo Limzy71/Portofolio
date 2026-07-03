@@ -80,7 +80,7 @@ export function Hero() {
 
           <motion.p
             variants={fadeInUp}
-            className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-gray-300 sm:text-xl"
+            className="mx-auto mt-8 max-w-2xl px-4 text-sm sm:text-lg leading-relaxed text-gray-300 md:text-xl"
           >
             {t.hero.description}
           </motion.p>

@@ -66,7 +66,7 @@ export function SplashScreen() {
                 y: 0,
                 transition: { delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
               }}
-              className="mt-4 text-lg text-gray-400 sm:text-xl"
+              className="mt-4 px-2 text-[13px] sm:text-lg md:text-xl font-medium text-gray-400 tracking-wide"
             >
               {siteConfig.role}
             </motion.p>

@@ -1,7 +1,7 @@
-﻿export const siteConfig = {
+export const siteConfig = {
   name: "La Ode Muh. Ikhsan Mbala",
   initials: "OD",
-  role: "Fullstack Developer | Software engineer enthusiast",
+  role: "Fullstack Developer | Software Engineer Enthusiast",
   location: "Indonesia",
   social: {
     github: "https://github.com/Limzy71",
