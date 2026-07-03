@@ -73,16 +73,16 @@ export function SplashScreen() {
           </div>
 
           <motion.button
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 1.2, duration: 0.4 },
+              transition: { delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] },
             }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.04, transition: { duration: 0.25, ease: "easeOut" } }}
+            whileTap={{ scale: 0.96, transition: { duration: 0.15 } }}
             onClick={skipSplash}
-            className="group absolute bottom-12 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.05] px-6 py-2.5 text-xs font-semibold tracking-widest text-gray-300 uppercase backdrop-blur-md transition-all hover:border-violet-500/60 hover:bg-violet-500/15 hover:text-white hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+            className="group absolute bottom-12 flex cursor-pointer items-center gap-3 rounded-full border border-white/15 bg-white/[0.07] px-7 py-3 text-xs font-bold tracking-[0.2em] text-gray-200 uppercase shadow-xl backdrop-blur-md transition-colors duration-300 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-white"
           >
             <span>{t.splash.skip}</span>
             <svg

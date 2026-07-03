@@ -54,25 +54,25 @@ export function Hero() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="relative mx-auto max-w-3xl text-center"
+          className="relative mx-auto max-w-4xl text-center"
         >
           <motion.p
             variants={fadeInUp}
-            className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400"
+            className="font-mono text-sm font-semibold tracking-[0.25em] text-violet-400 uppercase sm:text-base"
           >
             {t.hero.greeting}
           </motion.p>
 
           <motion.h1
             variants={fadeInUp}
-            className="mt-4 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-white dark:via-gray-300 dark:to-white sm:text-5xl lg:text-6xl"
+            className="mt-6 text-5xl font-black uppercase tracking-tighter text-white sm:text-7xl lg:text-8xl"
           >
             {siteConfig.name}
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
-            className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400 sm:text-xl"
+            className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-gray-300 sm:text-xl"
           >
             {t.hero.description}
           </motion.p>
@@ -82,7 +82,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Button
-              className="rounded-full px-8 shadow-lg shadow-indigo-500/20 transition-shadow hover:shadow-xl hover:shadow-indigo-500/30"
+              className="rounded-full border border-violet-500/50 bg-violet-600 px-8 py-6 text-sm font-bold uppercase tracking-widest text-white shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all hover:bg-violet-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] hover:-translate-y-0.5"
               onClick={() => {
                 document
                   .getElementById("projects")
@@ -93,7 +93,7 @@ export function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="rounded-full px-8"
+              className="rounded-full border border-white/20 bg-white/[0.03] px-8 py-6 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-md transition-all hover:border-white/40 hover:bg-white/[0.08] hover:-translate-y-0.5"
               onClick={() => {
                 document
                   .getElementById("contact")
