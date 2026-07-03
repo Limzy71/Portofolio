@@ -15,10 +15,10 @@ export const projects: Project[] = [
   },
   {
     id: "project-2",
-    title: "Outventure Explorer",
+    title: "OutVenture Outdoor Store",
     description:
-      "Platform panduan petualangan alam terbuka dan pemesanan aktivitas wisata outdoor dengan penjelajahan destinasi berbasis peta interaktif.",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
+      "Platform web e-commerce penjualan perlengkapan dan peralatan aktivitas outdoor terpadu dengan pengelolaan katalog produk, keranjang belanja, dan sistem pemesanan yang responsif.",
+    techStack: ["PHP", "Laravel", "Blade", "SQLite"],
     image: "/images/projects/outventure.jpg",
     repoUrl: "https://github.com/Naksuuuu/OutVenture",
     status: "Code Only",
@@ -31,6 +31,16 @@ export const projects: Project[] = [
     techStack: ["Node.js", "TypeScript", "MySQL", "REST API"],
     image: "/images/kain tenun bg.png",
     repoUrl: "https://github.com/Limzy71",
-    status: "○ Code Only / Offline",
+    status: "Code Only",
+  },
+  {
+    id: "project-4",
+    title: "Proyek Aplikasi ke-4",
+    description:
+      "Kartu proyek keempat yang disiapkan untuk menampilkan portofolio solusi digital atau aplikasi terbaru kamu. Silakan beri tahu detail proyeknya agar langsung saya sesuaikan.",
+    techStack: ["Next.js", "React", "Tailwind CSS", "PostgreSQL"],
+    image: "/images/projects/outventure.jpg",
+    repoUrl: "https://github.com/Limzy71",
+    status: "In Development",
   },
 ];

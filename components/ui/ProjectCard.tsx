@@ -28,7 +28,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
 
           {project.status && (
-            <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase backdrop-blur-md">
+            <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/80 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase backdrop-blur-md opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
               {project.status}
             </div>
           )}
