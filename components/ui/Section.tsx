@@ -22,8 +22,15 @@ export function Section({ id, title, subtitle, children, className }: SectionPro
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
-      className={cn("scroll-mt-20 py-20 md:py-28", className)}
+      className={cn("scroll-mt-20 relative overflow-hidden py-20 md:py-28", className)}
     >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04] text-gray-900 dark:opacity-[0.06] dark:text-white"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, currentColor 1px, transparent 0)`,
+          backgroundSize: "50px 50px",
+        }}
+      />
       <Container>
         {title && (
           <div className="mb-12 text-center">

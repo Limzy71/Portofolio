@@ -22,6 +22,13 @@ export function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-50/60 via-transparent to-transparent dark:from-indigo-950/10" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04] text-gray-900 dark:opacity-[0.06] dark:text-white"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, currentColor 1px, transparent 0)`,
+          backgroundSize: "50px 50px",
+        }}
+      />
 
       {shapes.map((shape, i) => (
         <motion.div

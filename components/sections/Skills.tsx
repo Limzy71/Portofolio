@@ -96,6 +96,13 @@ export function Skills() {
       id="skills"
       className="scroll-mt-20 relative overflow-hidden bg-gradient-to-b from-purple-50/20 via-transparent to-transparent py-20 dark:from-purple-950/10 dark:via-transparent dark:to-transparent md:py-28"
     >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04] text-gray-900 dark:opacity-[0.06] dark:text-white"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, currentColor 1px, transparent 0)`,
+          backgroundSize: "50px 50px",
+        }}
+      />
       <Container>
         <motion.div
           variants={fadeInUp}
