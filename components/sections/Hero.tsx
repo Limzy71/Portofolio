@@ -48,12 +48,12 @@ export function Hero() {
         />
       ))}
 
-      <Container>
+      <Container className="max-w-7xl">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="relative mx-auto max-w-4xl text-center"
+          className="relative mx-auto w-full max-w-6xl text-center"
         >
           <motion.div
             variants={fadeInUp}
@@ -65,9 +65,10 @@ export function Hero() {
 
           <motion.h1
             variants={fadeInUp}
-            className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            {siteConfig.name}
+            <span className="whitespace-nowrap">La Ode Muh.</span>{" "}
+            <span className="whitespace-nowrap">Ikhsan Mbala</span>
           </motion.h1>
 
           <motion.p

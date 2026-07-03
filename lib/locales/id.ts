@@ -7,9 +7,9 @@ export const id = {
     kontak: "Kontak",
   },
   hero: {
-    greeting: "Hello, saya",
+    greeting: "Halo, saya",
     description:
-      "Fullstack developer & software engineer enthusiast yang passionate membangun solusi digital yang berdampak.",
+      "Pengembang Fullstack & antusias Rekayasa Perangkat Lunak yang berdedikasi membangun solusi digital yang berdampak nyata.",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
   },
@@ -18,10 +18,10 @@ export const id = {
     headingPrefix: "Tentang",
     headingHighlight: "Saya",
     title: "Tentang Saya",
-    subtitle: "Membangun web dan software yang relevan.",
-    p1: "Halo! Saya seorang Fullstack Developer & Software Engineer yang fokus membangun produk web dan software yang stabil, cepat, dan mudah dikembangkan.",
-    p2: "Saya terbiasa mengerjakan alur end-to-end, mulai dari perancangan antarmuka, pengembangan backend, integrasi database, sampai deployment dan optimasi performa.",
-    p3: "Fokus utama saya adalah menciptakan solusi digital yang benar-benar dipakai, maintainable, dan memberi dampak nyata untuk pengguna maupun bisnis.",
+    subtitle: "Membangun web dan perangkat lunak yang relevan.",
+    p1: "Halo! Saya seorang Pengembang Fullstack & Rekayasa Perangkat Lunak yang fokus membangun produk web dan sistem yang stabil, cepat, dan mudah dikembangkan.",
+    p2: "Saya terbiasa mengerjakan alur menyeluruh dari awal hingga akhir, mulai dari perancangan antarmuka, pengembangan backend, integrasi basis data, hingga rilis dan optimasi performa.",
+    p3: "Fokus utama saya adalah menciptakan solusi digital yang mudah dipelihara, benar-benar bermanfaat, serta memberi dampak nyata untuk pengguna maupun bisnis.",
     statsYears: "Tahun Pengalaman",
     statsProjects: "Proyek Selesai",
     statsTech: "Teknologi Dikuasai",
@@ -32,8 +32,8 @@ export const id = {
     headingHighlight: "Terpilih",
     subtitle: "Beberapa proyek yang pernah saya kerjakan.",
     empty: "Belum ada proyek ditambahkan.",
-    liveDemo: "Live Demo →",
-    sourceCode: "Source Code →",
+    liveDemo: "Demo Langsung →",
+    sourceCode: "Kode Sumber →",
   },
   skills: {
     title: "Skill",
@@ -82,7 +82,7 @@ export const id = {
     },
   },
   footer: {
-    rights: "All rights reserved.",
+    rights: "Hak cipta dilindungi.",
     builtWith: "Dibuat dengan Next.js & Framer Motion",
   },
   splash: {
