@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
@@ -56,16 +55,17 @@ export function Hero() {
           animate="visible"
           className="relative mx-auto max-w-4xl text-center"
         >
-          <motion.p
+          <motion.div
             variants={fadeInUp}
-            className="font-mono text-sm font-semibold tracking-[0.25em] text-violet-400 uppercase sm:text-base"
+            className="inline-flex items-center gap-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-xs font-semibold tracking-[0.2em] text-violet-300 uppercase backdrop-blur-md sm:text-sm"
           >
-            {t.hero.greeting}
-          </motion.p>
+            <span className="h-2 w-2 rounded-full bg-violet-400 animate-pulse" />
+            <span>{t.hero.greeting}</span>
+          </motion.div>
 
           <motion.h1
             variants={fadeInUp}
-            className="mt-6 text-5xl font-black uppercase tracking-tighter text-white sm:text-7xl lg:text-8xl"
+            className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
             {siteConfig.name}
           </motion.h1>
@@ -81,27 +81,26 @@ export function Hero() {
             variants={fadeInUp}
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
-            <Button
-              className="rounded-full border border-violet-500/50 bg-violet-600 px-8 py-6 text-sm font-bold uppercase tracking-widest text-white shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all hover:bg-violet-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] hover:-translate-y-0.5"
+            <button
               onClick={() => {
                 document
                   .getElementById("projects")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
+              className="inline-flex cursor-pointer items-center justify-center rounded-full border border-violet-500/60 bg-violet-600 px-8 py-4 text-xs font-bold tracking-widest text-white uppercase shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.55)]"
             >
               {t.hero.viewProjects}
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border border-white/20 bg-white/[0.03] px-8 py-6 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-md transition-all hover:border-white/40 hover:bg-white/[0.08] hover:-translate-y-0.5"
+            </button>
+            <button
               onClick={() => {
                 document
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
+              className="inline-flex cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-8 py-4 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/[0.1] hover:shadow-lg"
             >
               {t.hero.contactMe}
-            </Button>
+            </button>
           </motion.div>
         </motion.div>
       </Container>
