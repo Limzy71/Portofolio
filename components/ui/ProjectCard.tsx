@@ -20,7 +20,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
       : project.description;
 
   return (
-    <motion.div variants={fadeInUp} className="group relative">
+    <motion.div
+      variants={fadeInUp}
+      className="group relative [[-webkit-tap-highlight-color:transparent]]"
+    >
       <Card className="overflow-hidden p-0 border-zinc-200 dark:border-zinc-800">
         <div className="relative aspect-[4/5] overflow-hidden bg-zinc-100 dark:bg-zinc-900">
           <Image
@@ -32,14 +35,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
 
           {project.status && (
-            <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/80 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase backdrop-blur-md opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-black/90 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
               {project.status}
             </div>
           )}
           
           {/* Details Overlay (shows on hover/tap) */}
-          <div className="absolute inset-0 z-10 flex flex-col justify-end bg-neutral-950/85 p-6 text-white opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
-            <div className="flex flex-col gap-3 translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
+          <div className="absolute inset-0 z-10 flex flex-col justify-end bg-neutral-950/90 p-6 text-white opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
+            <div className="flex flex-col gap-3 translate-y-2 transition-transform duration-300 ease-out group-hover:translate-y-0">
               <h3 className="text-xl font-bold uppercase tracking-tight text-white leading-tight">
                 {project.title}
               </h3>
