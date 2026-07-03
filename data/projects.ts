@@ -29,18 +29,8 @@ export const projects: Project[] = [
     description:
       "Sistem rekayasa perangkat lunak berskala enterprise untuk otomasi alur kerja gudang, kontrol mutu, dan manajemen rantai pasok. (Proyek internal/backend, tidak di-deploy publik).",
     techStack: ["Node.js", "TypeScript", "MySQL", "REST API"],
-    image: "/images/kain tenun bg.png",
-    repoUrl: "https://github.com/Limzy71",
-    status: "Code Only",
-  },
-  {
-    id: "project-4",
-    title: "Proyek Aplikasi ke-4",
-    description:
-      "Kartu proyek keempat yang disiapkan untuk menampilkan portofolio solusi digital atau aplikasi terbaru kamu. Silakan beri tahu detail proyeknya agar langsung saya sesuaikan.",
-    techStack: ["Next.js", "React", "Tailwind CSS", "PostgreSQL"],
     image: "/images/projects/outventure.jpg",
     repoUrl: "https://github.com/Limzy71",
-    status: "In Development",
+    status: "Code Only",
   },
 ];
