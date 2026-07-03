@@ -88,7 +88,7 @@ export function Hero() {
                   .getElementById("projects")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex cursor-pointer items-center justify-center rounded-full border border-violet-500/60 bg-violet-600 px-8 py-4 text-xs font-bold tracking-widest text-white uppercase shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.55)]"
+              className="inline-flex w-full cursor-pointer items-center justify-center rounded-full border border-violet-500/60 bg-violet-600 px-8 py-4 text-xs font-bold tracking-widest text-white uppercase shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.55)] sm:w-auto"
             >
               {t.hero.viewProjects}
             </button>
@@ -98,7 +98,7 @@ export function Hero() {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-8 py-4 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/[0.1] hover:shadow-lg"
+              className="inline-flex w-full cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-8 py-4 text-xs font-bold tracking-widest text-white uppercase backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/[0.1] hover:shadow-lg sm:w-auto"
             >
               {t.hero.contactMe}
             </button>

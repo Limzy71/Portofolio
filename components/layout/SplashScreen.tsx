@@ -44,7 +44,7 @@ export function SplashScreen() {
             >
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
                 {siteConfig.name.split(" ").map((word, wordIdx) => (
-                  <span key={wordIdx} className="inline-block mr-4 last:mr-0">
+                  <span key={wordIdx} className="inline-block mr-2.5 last:mr-0 sm:mr-4">
                     {word.split("").map((letter, letterIdx) => (
                       <motion.span
                         key={`${wordIdx}-${letterIdx}`}

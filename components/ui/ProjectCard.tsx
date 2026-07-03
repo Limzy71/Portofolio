@@ -27,9 +27,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           
-          {/* Details Overlay (visible only on hover) */}
-          <div className="absolute inset-0 bg-neutral-950/85 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6 z-10 text-white">
-            <div className="translate-y-4 transition-transform duration-300 group-hover:translate-y-0 flex flex-col gap-3">
+          {/* Details Overlay (visible by default on touch/mobile, hover on desktop) */}
+          <div className="absolute inset-0 z-10 flex flex-col justify-end bg-neutral-950/85 p-6 text-white opacity-100 backdrop-blur-[2px] transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+            <div className="flex flex-col gap-3 translate-y-0 transition-transform duration-300 md:translate-y-4 md:group-hover:translate-y-0">
               <h3 className="text-xl font-bold uppercase tracking-tight text-white leading-tight">
                 {project.title}
               </h3>
