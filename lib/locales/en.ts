@@ -1,4 +1,4 @@
-﻿export const en = {
+export const en = {
   nav: {
     home: "Home",
     tentang: "About",
@@ -14,6 +14,9 @@
     contactMe: "Contact Me",
   },
   about: {
+    kicker: "get to know me",
+    headingPrefix: "About",
+    headingHighlight: "Me",
     title: "About Me",
     subtitle: "Building practical web and software solutions.",
     p1: "Hi! I'm a Fullstack Developer & Software Engineer focused on building web and software products that are reliable, scalable, and easy to maintain.",
@@ -24,11 +27,13 @@
     statsTech: "Technologies Mastered",
   },
   projects: {
-    title: "Projects",
+    kicker: "selected work",
+    headingPrefix: "Selected",
+    headingHighlight: "Projects",
     subtitle: "Some projects I've worked on.",
     empty: "No projects added yet.",
-    liveDemo: "Live Demo â†’",
-    sourceCode: "Source Code â†’",
+    liveDemo: "Live Demo →",
+    sourceCode: "Source Code →",
   },
   skills: {
     title: "Skills",

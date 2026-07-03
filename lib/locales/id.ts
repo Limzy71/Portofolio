@@ -1,4 +1,4 @@
-﻿export const id = {
+export const id = {
   nav: {
     home: "Home",
     tentang: "Tentang",
@@ -14,6 +14,9 @@
     contactMe: "Hubungi Saya",
   },
   about: {
+    kicker: "mengenal saya",
+    headingPrefix: "Tentang",
+    headingHighlight: "Saya",
     title: "Tentang Saya",
     subtitle: "Membangun web dan software yang relevan.",
     p1: "Halo! Saya seorang Fullstack Developer & Software Engineer yang fokus membangun produk web dan software yang stabil, cepat, dan mudah dikembangkan.",
@@ -24,11 +27,13 @@
     statsTech: "Teknologi Dikuasai",
   },
   projects: {
-    title: "Proyek",
+    kicker: "proyek pilihan",
+    headingPrefix: "Proyek",
+    headingHighlight: "Terpilih",
     subtitle: "Beberapa proyek yang pernah saya kerjakan.",
     empty: "Belum ada proyek ditambahkan.",
-    liveDemo: "Live Demo â†’",
-    sourceCode: "Source Code â†’",
+    liveDemo: "Live Demo →",
+    sourceCode: "Source Code →",
   },
   skills: {
     title: "Skill",

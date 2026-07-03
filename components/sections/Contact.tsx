@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
@@ -41,12 +41,12 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gray-950 py-20 md:py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100/50 py-20 dark:from-gray-900/50 dark:to-gray-950/30 md:py-28"
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04] text-gray-900 dark:opacity-[0.06] dark:text-white"
         style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, white 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 25px 25px, currentColor 1px, transparent 0)`,
           backgroundSize: "50px 50px",
         }}
       />
@@ -59,16 +59,16 @@ export function Contact() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto flex max-w-5xl flex-col items-center text-center"
         >
-          <p className="text-xs font-black uppercase tracking-[0.35em] text-violet-500 dark:text-violet-400">
+          <p className="font-mono text-base font-semibold tracking-wide text-violet-400 sm:text-xl">
             {t.contact.kicker}
           </p>
 
-          <h2 className="mt-6 text-5xl font-black uppercase leading-[0.95] tracking-tighter text-white sm:text-6xl md:text-7xl">
+          <h2 className="mt-8 text-5xl font-black uppercase leading-[0.95] tracking-tighter text-gray-900 dark:text-white sm:text-6xl md:text-7xl">
             {t.contact.headingPrefix}
             <span className="block">{t.contact.headingHighlight}</span>
           </h2>
 
-          <p className="mt-10 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
+          <p className="mx-auto mt-10 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-400 sm:text-lg">
             {t.contact.body}
           </p>
 
@@ -81,9 +81,9 @@ export function Contact() {
                 rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-violet-400/60 hover:bg-violet-400/10 sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-gray-200/80 bg-white/80 px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-violet-400/60 hover:bg-violet-500/10 hover:text-violet-600 hover:shadow-md dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:hover:border-violet-400/60 dark:hover:bg-violet-400/10 dark:hover:text-violet-300 sm:w-auto"
               >
-                <Icon className="h-5 w-5 text-gray-300 transition-colors group-hover:text-violet-300" />
+                <Icon className="h-5 w-5 text-gray-500 transition-colors group-hover:text-violet-600 dark:text-gray-300 dark:group-hover:text-violet-300" />
                 {t.contact.links[labelKey]}
               </motion.a>
             ))}
