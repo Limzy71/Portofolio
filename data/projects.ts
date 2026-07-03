@@ -25,11 +25,11 @@ export const projects: Project[] = [
   },
   {
     id: "project-3",
-    title: "Motekar ERP & Logistics Engine",
+    title: "Motekar ERP System",
     description:
-      "Sistem rekayasa perangkat lunak berskala enterprise untuk otomasi alur kerja gudang, kontrol mutu, dan manajemen rantai pasok. (Proyek internal/backend, tidak di-deploy publik).",
-    techStack: ["Node.js", "TypeScript", "MySQL", "REST API"],
-    image: "/images/projects/outventure.jpg",
+      "Sistem ERP terpadu untuk otomasi operasional bisnis dari pengadaan, gudang, produksi, hingga QC dan CRM. Menggunakan backend Express + TypeScript & MySQL, serta frontend Vite + TypeScript.",
+    techStack: ["Express", "TypeScript", "Vite", "MySQL"],
+    image: "/images/projects/Motekar ERP.jpg",
     repoUrl: "https://github.com/Limzy71",
     status: "Code Only",
   },
