@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeInUp, staggerContainer } from "@/lib/animations";

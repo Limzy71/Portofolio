@@ -12,7 +12,6 @@ import {
   SiSupabase,
   SiGit,
   SiFigma,
-  SiCanvas,
   SiTypescript,
   SiJavascript,
 } from "react-icons/si";
