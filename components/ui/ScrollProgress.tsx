@@ -1,36 +1,45 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 
 export function ScrollProgress() {
-  const scrollProgress = useMotionValue(0);
+  const { scrollYProgress } = useScroll();
+  const progress = useMotionValue(0);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const doc = document.documentElement;
+    const atBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 2;
+    progress.set(atBottom ? 1 : latest);
+  });
 
   useEffect(() => {
-    const updateScrollProgress = () => {
-      const documentElement = document.documentElement;
-      const scrollTop = window.scrollY || documentElement.scrollTop;
-      const scrollableHeight = documentElement.scrollHeight - window.innerHeight;
+    const syncBottomProgress = () => {
+      const doc = document.documentElement;
+      const maxScroll = doc.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) {
+        progress.set(1);
+        return;
+      }
 
-      scrollProgress.set(
-        scrollableHeight <= 0 ? 1 : Math.min(scrollTop / scrollableHeight, 1),
-      );
+      const atBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 2;
+      if (atBottom) progress.set(1);
     };
 
-    updateScrollProgress();
-    window.addEventListener("scroll", updateScrollProgress, { passive: true });
-    window.addEventListener("resize", updateScrollProgress);
-
-    return () => {
-      window.removeEventListener("scroll", updateScrollProgress);
-      window.removeEventListener("resize", updateScrollProgress);
-    };
-  }, [scrollProgress]);
+    syncBottomProgress();
+    window.addEventListener("resize", syncBottomProgress);
+    return () => window.removeEventListener("resize", syncBottomProgress);
+  }, [progress]);
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
-      style={{ scaleX: scrollProgress }}
+      className="pointer-events-none fixed top-0 left-0 z-[60] h-[3px] w-screen origin-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+      style={{ scaleX: progress }}
     />
   );
 }

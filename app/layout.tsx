@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 import { SplashScreen } from "@/components/layout/SplashScreen";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
@@ -36,9 +37,28 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
-        
-          {`(function(){try{var attrs=['bis_skin_checked','fdprocessedid','_ext','data-gr-ext'];function clean(){attrs.forEach(function(attr){document.querySelectorAll('['+attr+']').forEach(function(el){el.removeAttribute(attr);});});}clean();new MutationObserver(clean).observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:attrs});}catch(e){}})();`}
-        
+        <Script id="sanitize-extension-attrs" strategy="beforeInteractive">
+          {`(function () {
+  try {
+    var attrs = ['bis_skin_checked', 'fdprocessedid', '_ext', 'data-gr-ext'];
+    function clean() {
+      attrs.forEach(function (attr) {
+        document.querySelectorAll('[' + attr + ']').forEach(function (el) {
+          el.removeAttribute(attr);
+        });
+      });
+    }
+    clean();
+    new MutationObserver(clean).observe(document.documentElement, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: attrs,
+    });
+  } catch (e) {
+    // No-op: this safeguard should never break rendering.
+  }
+})();`}
+        </Script>
         <ScrollToTop />
         <ScrollProgress />
         <BackToTop />
