@@ -27,10 +27,10 @@ src/
 ├── components/
 │   ├── layout/         # Navbar, Footer, SplashScreen
 │   ├── sections/       # Hero, About, Projects, Skills, Contact
-│   └── ui/             # Button, Card, Container, Section, dll
-├── hooks/              # Custom hooks (useSplashScreen, useScrollReveal)
+│   └── ui/             # Card, Container, Section, ProjectCard, dll
+├── hooks/              # Custom hooks (useSplashScreen)
 ├── lib/                # Utility & animation variants
 ├── types/              # TypeScript interfaces
-├── data/               # Data proyek & skill
+├── data/               # Data proyek
 └── config/             # Konfigurasi site (nama, sosial media, dll)
 ```

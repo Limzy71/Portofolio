@@ -55,8 +55,8 @@ export function Projects() {
         viewport={{ once: true }}
         className="grid gap-8 sm:grid-cols-2 md:grid-cols-3"
       >
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </motion.div>
     </Section>

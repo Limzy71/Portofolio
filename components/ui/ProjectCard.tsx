@@ -10,9 +10,10 @@ import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 
 interface ProjectCardProps {
   project: Project;
+  index?: number;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const { locale } = useLanguage();
   const description =
     locale === "en" && project.descriptionEn
@@ -22,9 +23,20 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative [[-webkit-tap-highlight-color:transparent]]"
+      initial={{ borderColor: "rgba(16,185,129,0.3)", boxShadow: "0 0 10px rgba(16,185,129,0.1)" }}
+      animate={{
+        borderColor: ["rgba(16,185,129,0.3)", "rgba(16,185,129,0.8)", "rgba(16,185,129,0.3)"],
+        boxShadow: ["0 0 10px rgba(16,185,129,0.1)", "0 0 20px rgba(16,185,129,0.45)", "0 0 10px rgba(16,185,129,0.1)"],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: (index % 3) * 1.2,
+      }}
+      className="group relative rounded-xl border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.1)] dark:border-emerald-500/30 [[-webkit-tap-highlight-color:transparent]]"
     >
-      <Card className="overflow-hidden p-0 border-zinc-200 dark:border-zinc-800 bg-neutral-950">
+      <Card className="overflow-hidden p-0 border-0 bg-neutral-950 rounded-xl">
         {/* =========================================================
             MOBILE LAYOUT (< md): Clean Split Card (Image Top, Details Bottom)
             Zero hover emulation, zero delay, zero overlap with image text.
