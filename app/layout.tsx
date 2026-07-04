@@ -22,8 +22,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portofolio",
-  description: "Personal portfolio website built with Next.js",
+  title: "Portofolio | La Ode Muh. Ikhsan Mbala",
+  description: "Personal portfolio website of La Ode Muh. Ikhsan Mbala built with Next.js",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
