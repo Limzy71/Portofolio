@@ -98,6 +98,17 @@ export function Hero() {
             >
               {t.hero.viewProjects}
             </button>
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-8 py-4 text-xs font-bold tracking-widest text-emerald-300 uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:bg-emerald-500/20 hover:text-white hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] sm:w-auto"
+            >
+              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>{t.hero.downloadCV}</span>
+            </a>
             <button
               onClick={() => {
                 document

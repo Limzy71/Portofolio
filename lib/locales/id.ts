@@ -12,6 +12,7 @@ export const id = {
       "Pengembang Fullstack & antusias Rekayasa Perangkat Lunak yang berdedikasi membangun solusi digital yang berdampak nyata.",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
+    downloadCV: "Unduh CV",
   },
   about: {
     kicker: "mengenal saya",

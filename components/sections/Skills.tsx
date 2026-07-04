@@ -147,24 +147,19 @@ export function Skills() {
                 </div>
 
                 <div className="flex flex-wrap gap-3">
-                  {card.tags.map((tag, tagIndex) => {
+                  {card.tags.map((tag) => {
                     const TagIcon = tag.icon;
 
                     return (
                       <motion.span
                         key={tag.name}
-                        className="inline-flex items-center gap-2 rounded-md border border-emerald-500/30 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-600 shadow-[0_0_10px_rgba(16,185,129,0.1)] dark:border-emerald-500/30 dark:bg-gray-800/60 dark:text-gray-300"
-                        initial={{ borderColor: "rgba(16,185,129,0.3)", boxShadow: "0 0 10px rgba(16,185,129,0.1)" }}
-                        animate={{
-                          borderColor: ["rgba(16,185,129,0.3)", "rgba(16,185,129,0.8)", "rgba(16,185,129,0.3)"],
-                          boxShadow: ["0 0 10px rgba(16,185,129,0.1)", "0 0 20px rgba(16,185,129,0.45)", "0 0 10px rgba(16,185,129,0.1)"],
+                        className="inline-flex items-center gap-2 rounded-md border border-emerald-500/30 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-600 shadow-[0_0_10px_rgba(16,185,129,0.1)] transition-colors dark:border-emerald-500/30 dark:bg-gray-800/60 dark:text-gray-300"
+                        whileHover={{
+                          scale: 1.04,
+                          borderColor: "rgba(16,185,129,0.8)",
+                          boxShadow: "0 0 18px rgba(16,185,129,0.35)",
                         }}
-                        transition={{
-                          duration: 4,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: (tagIndex % 3) * 1.2,
-                        }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
                       >
                         {TagIcon ? <TagIcon className="h-4 w-4 text-emerald-400" /> : null}
                         {tag.name}

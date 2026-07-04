@@ -12,6 +12,7 @@ export const en = {
       "Fullstack developer & software engineer enthusiast passionate about building impactful digital solutions.",
     viewProjects: "View Projects",
     contactMe: "Contact Me",
+    downloadCV: "Download CV",
   },
   about: {
     kicker: "get to know me",
