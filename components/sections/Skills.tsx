@@ -135,7 +135,7 @@ export function Skills() {
             return (
               <div
                 key={card.titleKey}
-                className="group rounded-xl border border-gray-200/70 bg-white/70 p-8 shadow-sm shadow-black/5 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/70 dark:shadow-black/20"
+                className="group rounded-xl border border-emerald-500/20 bg-white/70 p-8 shadow-[0_0_12px_rgba(16,185,129,0.08)] backdrop-blur-sm dark:border-emerald-500/20 dark:bg-gray-900/70"
               >
                 <div className="mb-7 flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-400/30 bg-indigo-500/10 text-indigo-500 dark:text-indigo-400">
