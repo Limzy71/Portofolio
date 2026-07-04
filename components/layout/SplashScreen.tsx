@@ -1,10 +1,28 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useSplashScreen } from "@/hooks/useSplashScreen";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { siteConfig } from "@/config/site";
-import { staggerText, letterFadeUp } from "@/lib/animations";
+
+const wordContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const wordFadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 export function SplashScreen() {
   const { isVisible, skipSplash } = useSplashScreen();
@@ -17,72 +35,70 @@ export function SplashScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950 transform-gpu"
           style={{ backgroundColor: "#030712" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/60 via-gray-950 to-black" />
-          <motion.div
-            className="absolute inset-0"
-            animate={{
-              background: [
-                "radial-gradient(600px circle at 20% 30%, rgba(99,102,241,0.15), transparent 70%)",
-                "radial-gradient(600px circle at 80% 70%, rgba(99,102,241,0.15), transparent 70%)",
-                "radial-gradient(600px circle at 40% 50%, rgba(99,102,241,0.15), transparent 70%)",
-                "radial-gradient(600px circle at 20% 30%, rgba(99,102,241,0.15), transparent 70%)",
-              ],
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1Ii8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2YpIiBvcGFjaXR5PSIwLjA0Ii8+PC9zdmc+')] opacity-50" />
+          {/* Background Ambient Glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-black" />
 
-          <div className="relative text-center">
+          {/* GPU-Accelerated Subtle Light Blob */}
+          <motion.div
+            className="absolute h-96 w-96 rounded-full bg-indigo-600/15 blur-3xl transform-gpu pointer-events-none"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          <div className="relative text-center px-4">
             <motion.div
-              variants={staggerText}
+              variants={wordContainerVariants}
               initial="hidden"
               animate="visible"
               className="overflow-hidden"
             >
-              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+              <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl md:text-6xl">
                 {siteConfig.name.split(" ").map((word, wordIdx) => (
-                  <span key={wordIdx} className="inline-block mr-2.5 last:mr-0 sm:mr-4">
-                    {word.split("").map((letter, letterIdx) => (
-                      <motion.span
-                        key={`${wordIdx}-${letterIdx}`}
-                        variants={letterFadeUp}
-                        className="inline-block"
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
-                  </span>
+                  <motion.span
+                    key={wordIdx}
+                    variants={wordFadeUpVariants}
+                    className="inline-block mr-3 last:mr-0 transform-gpu"
+                  >
+                    {word}
+                  </motion.span>
                 ))}
               </h1>
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{
                 opacity: 1,
                 y: 0,
-                transition: { delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                transition: { delay: 0.6, duration: 0.5, ease: [0.16, 1, 0.3, 1] },
               }}
-              className="mt-4 px-2 text-[13px] sm:text-lg md:text-xl font-medium text-gray-400 tracking-wide"
+              className="mt-4 px-2 text-xs sm:text-lg md:text-xl font-medium text-gray-400 tracking-wide transform-gpu"
             >
               {siteConfig.role}
             </motion.p>
           </div>
 
           <motion.button
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+              transition: { delay: 0.8, duration: 0.5, ease: [0.16, 1, 0.3, 1] },
             }}
-            whileHover={{ scale: 1.04, transition: { duration: 0.25, ease: "easeOut" } }}
-            whileTap={{ scale: 0.96, transition: { duration: 0.15 } }}
+            whileHover={{ scale: 1.04, transition: { duration: 0.2 } }}
+            whileTap={{ scale: 0.95 }}
             onClick={skipSplash}
-            className="group absolute bottom-12 flex cursor-pointer items-center gap-3 rounded-full border border-white/15 bg-white/[0.07] px-7 py-3 text-xs font-bold tracking-[0.2em] text-gray-200 uppercase shadow-xl backdrop-blur-md transition-colors duration-300 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-white"
+            className="group absolute bottom-10 flex cursor-pointer items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] px-6 py-2.5 text-xs font-bold tracking-[0.2em] text-gray-200 uppercase shadow-xl backdrop-blur-md transition-colors duration-300 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-white transform-gpu"
           >
             <span>{t.splash.skip}</span>
             <svg
