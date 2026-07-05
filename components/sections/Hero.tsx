@@ -99,7 +99,7 @@ export function Hero() {
               {t.hero.viewProjects}
             </button>
             <a
-              href="/cv.pdf"
+              href="/CV_La_Ode_Muh_Ikhsan_Mbala_Software_Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-8 py-4 text-xs font-bold tracking-widest text-emerald-300 uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:bg-emerald-500/20 hover:text-white hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] sm:w-auto"
