@@ -140,10 +140,10 @@ export function Skills() {
             return (
               <div
                 key={card.titleKey}
-                className="group rounded-xl border border-emerald-500/20 bg-white/70 p-8 shadow-[0_0_12px_rgba(16,185,129,0.08)] backdrop-blur-sm dark:border-emerald-500/20 dark:bg-gray-900/70"
+                className="group rounded-xl border border-violet-500/20 bg-white/70 p-8 shadow-[0_0_12px_rgba(139,92,246,0.08)] backdrop-blur-sm dark:border-violet-500/20 dark:bg-gray-900/70"
               >
                 <div className="mb-7 flex items-center gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-400/30 bg-indigo-500/10 text-indigo-500 dark:text-indigo-400">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 text-violet-500 dark:text-violet-400">
                     <CardIcon className="h-4.5 w-4.5" />
                   </span>
                   <h3 className="text-sm font-black uppercase tracking-tight text-gray-900 dark:text-white sm:text-base">
@@ -158,15 +158,15 @@ export function Skills() {
                     return (
                       <motion.span
                         key={tag.name}
-                        className="inline-flex items-center gap-2 rounded-md border border-emerald-500/30 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-600 shadow-[0_0_10px_rgba(16,185,129,0.1)] transition-colors dark:border-emerald-500/30 dark:bg-gray-800/60 dark:text-gray-300"
+                        className="inline-flex items-center gap-2 rounded-md border border-violet-500/30 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-600 shadow-[0_0_10px_rgba(139,92,246,0.1)] transition-colors dark:border-violet-500/30 dark:bg-gray-800/60 dark:text-gray-300"
                         whileHover={{
                           scale: 1.04,
-                          borderColor: "rgba(16,185,129,0.8)",
-                          boxShadow: "0 0 18px rgba(16,185,129,0.35)",
+                          borderColor: "rgba(139,92,246,0.8)",
+                          boxShadow: "0 0 18px rgba(139,92,246,0.35)",
                         }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                       >
-                        {TagIcon ? <TagIcon className="h-4 w-4 text-emerald-400" /> : null}
+                        {TagIcon ? <TagIcon className="h-4 w-4 text-violet-400" /> : null}
                         {tag.name}
                       </motion.span>
                     );
