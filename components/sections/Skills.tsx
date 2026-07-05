@@ -15,6 +15,7 @@ import {
   SiTypescript,
   SiJavascript,
   SiDart,
+  SiSqlite,
 } from "react-icons/si";
 import { FaCode, FaJava } from "react-icons/fa";
 import {
@@ -64,6 +65,7 @@ function getSkillCards(locale: Locale): SkillCard[] {
       icon: SiGit,
       tags: [
         { name: "MySQL", icon: SiMysql },
+        { name: "SQLite", icon: SiSqlite },
         { name: "Supabase", icon: SiSupabase },
         { name: "Git", icon: SiGit },
       ],
