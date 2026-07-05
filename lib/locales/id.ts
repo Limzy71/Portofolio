@@ -9,7 +9,7 @@ export const id = {
   hero: {
     greeting: "Halo, saya",
     description:
-      "Pengembang Full-Stack Web & Mobile dengan keahlian Rekayasa Perangkat Lunak yang berdedikasi membangun solusi digital yang berdampak nyata.",
+      "Pengembang Full-Stack Web & Mobile berlatar belakang Software Engineering yang berdedikasi membangun aplikasi berkinerja tinggi dan berdampak nyata.",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
     downloadCV: "Unduh CV",

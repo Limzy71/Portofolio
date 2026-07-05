@@ -9,7 +9,7 @@ export const en = {
   hero: {
     greeting: "Hello, I'm",
     description:
-      "Full-stack web & mobile developer with software engineering expertise, passionate about building impactful digital solutions.",
+      "Full-Stack Web & Mobile Developer with a background in Software Engineering, dedicated to building high-performance applications with real impact.",
     viewProjects: "View Projects",
     contactMe: "Contact Me",
     downloadCV: "Download CV",
