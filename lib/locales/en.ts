@@ -43,7 +43,7 @@ export const en = {
     headingPrefix: "Skills &",
     headingHighlight: "Expertise",
     cards: {
-      softwareMobile: "SOFTWARE & MOBILE",
+      softwareMobile: "WEB & MOBILE DEVELOPMENT",
       languages: "LANGUAGES & CORE TECH",
       uiux: "UI/UX",
       tools: "DATABASES & DEV TOOLS",

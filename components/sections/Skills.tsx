@@ -14,8 +14,9 @@ import {
   SiFigma,
   SiTypescript,
   SiJavascript,
+  SiDart,
 } from "react-icons/si";
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaJava } from "react-icons/fa";
 import {
   FiUsers,
   FiMessageSquare,
@@ -47,13 +48,15 @@ function getSkillCards(locale: Locale): SkillCard[] {
       titleKey: "softwareMobile",
       icon: FaCode,
       tags: [
-        { name: "Next.js", icon: SiNextdotjs },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "JavaScript", icon: SiJavascript },
-        { name: "Laravel", icon: SiLaravel },
         { name: "PHP", icon: SiPhp },
+        { name: "Laravel", icon: SiLaravel },
         { name: "Flutter", icon: SiFlutter },
+        { name: "Dart", icon: SiDart },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "Java", icon: FaJava },
         { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "Next.js", icon: SiNextdotjs },
       ],
     },
     {

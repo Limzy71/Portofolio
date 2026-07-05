@@ -43,7 +43,7 @@ export const id = {
     headingPrefix: "Skill &",
     headingHighlight: "Keahlian",
     cards: {
-      softwareMobile: "PERANGKAT LUNAK & MOBILE",
+      softwareMobile: "PENGEMBANGAN WEB & APLIKASI MOBILE",
       languages: "BAHASA & TEKNOLOGI INTI",
       uiux: "UI/UX",
       tools: "DATABASE & ALAT DEV",
