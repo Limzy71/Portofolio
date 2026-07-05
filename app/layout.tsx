@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ikhsan - Full Stack Developer & Software Engineer Enthusiast",
+  title: "Ikhsan - Full-Stack Web & Mobile Developer | Software Engineering",
   description: "Personal portfolio website of La Ode Muh. Ikhsan Mbala",
   icons: {
     icon: "/icon.svg",

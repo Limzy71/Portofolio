@@ -9,7 +9,7 @@ export const en = {
   hero: {
     greeting: "Hello, I'm",
     description:
-      "Fullstack developer & software engineer enthusiast passionate about building impactful digital solutions.",
+      "Full-stack web & mobile developer with software engineering expertise, passionate about building impactful digital solutions.",
     viewProjects: "View Projects",
     contactMe: "Contact Me",
     downloadCV: "Download CV",
@@ -20,7 +20,7 @@ export const en = {
     headingHighlight: "Me",
     title: "About Me",
     subtitle: "Building practical web and software solutions.",
-    p1: "Hi! I'm a Fullstack Developer & Software Engineer focused on building web and software products that are reliable, scalable, and easy to maintain.",
+    p1: "Hi! I'm a Full-Stack Web & Mobile Developer & Software Engineer focused on building web, mobile, and software products that are reliable, scalable, and easy to maintain.",
     p2: "I work across the full lifecycle, from UI implementation and backend architecture to database integration, deployment, and performance optimization.",
     p3: "My goal is to deliver digital solutions that are production-ready, user-focused, and aligned with real business needs.",
     statsYears: "Years Experience",

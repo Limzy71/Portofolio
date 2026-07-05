@@ -9,7 +9,7 @@ export const id = {
   hero: {
     greeting: "Halo, saya",
     description:
-      "Pengembang Fullstack & antusias Rekayasa Perangkat Lunak yang berdedikasi membangun solusi digital yang berdampak nyata.",
+      "Pengembang Full-Stack Web & Mobile dengan keahlian Rekayasa Perangkat Lunak yang berdedikasi membangun solusi digital yang berdampak nyata.",
     viewProjects: "Lihat Proyek",
     contactMe: "Hubungi Saya",
     downloadCV: "Unduh CV",
@@ -20,7 +20,7 @@ export const id = {
     headingHighlight: "Saya",
     title: "Tentang Saya",
     subtitle: "Membangun web dan perangkat lunak yang relevan.",
-    p1: "Halo! Saya seorang Pengembang Fullstack & Rekayasa Perangkat Lunak yang fokus membangun produk web dan sistem yang stabil, cepat, dan mudah dikembangkan.",
+    p1: "Halo! Saya seorang Pengembang Full-Stack Web & Mobile & Rekayasa Perangkat Lunak yang fokus membangun produk web, mobile, dan sistem yang stabil, cepat, dan mudah dikembangkan.",
     p2: "Saya terbiasa mengerjakan alur menyeluruh dari awal hingga akhir, mulai dari perancangan antarmuka, pengembangan backend, integrasi basis data, hingga rilis dan optimasi performa.",
     p3: "Fokus utama saya adalah menciptakan solusi digital yang mudah dipelihara, benar-benar bermanfaat, serta memberi dampak nyata untuk pengguna maupun bisnis.",
     statsYears: "Tahun Pengalaman",

@@ -87,7 +87,7 @@ export function SplashScreen() {
                 y: 0,
                 transition: { delay: 0.65, duration: 0.7, ease: [0.16, 1, 0.3, 1] },
               }}
-              className="mt-4 text-[11px] min-[380px]:text-xs sm:text-base md:text-lg font-medium tracking-widest text-indigo-200/70 uppercase transform-gpu"
+              className="mt-4 text-[8.5px] min-[360px]:text-[9.5px] min-[400px]:text-[10.5px] sm:text-sm md:text-base lg:text-lg font-medium tracking-normal min-[360px]:tracking-wide min-[400px]:tracking-wider sm:tracking-widest text-indigo-200/70 uppercase whitespace-nowrap transform-gpu"
             >
               {siteConfig.role}
             </motion.p>
