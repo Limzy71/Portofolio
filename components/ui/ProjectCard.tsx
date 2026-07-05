@@ -22,7 +22,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative rounded-xl border border-emerald-500/20 shadow-[0_0_12px_rgba(16,185,129,0.08)] dark:border-emerald-500/20 [[-webkit-tap-highlight-color:transparent]]"
+      className="group relative rounded-xl border border-violet-500/20 shadow-[0_0_12px_rgba(139,92,246,0.08)] dark:border-violet-500/20 [[-webkit-tap-highlight-color:transparent]]"
     >
       <Card className="overflow-hidden p-0 border-0 bg-neutral-950 rounded-xl">
         {/* =========================================================
