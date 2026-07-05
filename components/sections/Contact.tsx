@@ -41,7 +41,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-20 relative overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100/50 py-20 dark:from-gray-900/50 dark:to-gray-950/30 md:py-28"
+      className="scroll-mt-20 relative overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100/50 py-20 dark:from-purple-950/15 dark:via-transparent dark:to-transparent md:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04] text-gray-900 dark:opacity-[0.06] dark:text-white"

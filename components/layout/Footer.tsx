@@ -11,7 +11,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-200 bg-gradient-to-b from-gray-50/50 to-transparent dark:border-gray-800 dark:from-gray-900/30 dark:to-transparent">
+    <footer className="border-t border-gray-200 bg-gradient-to-b from-gray-50/50 to-transparent dark:border-violet-500/20 dark:from-violet-950/20 dark:to-transparent">
       <Container className="flex flex-col items-center justify-between gap-4 py-8 text-center sm:flex-row sm:text-left">
         <p className="text-sm text-gray-500 dark:text-gray-400">
           &copy; {year} {siteConfig.name}. {t.footer.rights}
